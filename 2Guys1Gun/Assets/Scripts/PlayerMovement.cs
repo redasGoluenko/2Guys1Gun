@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode leftKey = KeyCode.A;
     [SerializeField] private KeyCode rightKey = KeyCode.D;
+    [SerializeField] private KeyCode transferKey = KeyCode.T;
+
+    [SerializeField] private GameObject transferableObject;
+    [SerializeField] private float transferSpeed = 5f;
+    private bool isTransferring = false;
 
     void Update()
     {
@@ -38,6 +43,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(jumpKey) && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+
+        if (Input.GetKeyDown(transferKey) && transferableObject != null && !isTransferring)
+        {
+            StartCoroutine(TransferObject());
         }
 
         Flip();
@@ -63,4 +73,26 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+    private IEnumerator TransferObject()
+    {
+        isTransferring = true;
+        Vector3 startPos = transferableObject.transform.position;
+        float elapsedTime = 0f;
+        float duration = Vector3.Distance(startPos, transform.position) / transferSpeed;
+
+        while (elapsedTime < duration)
+        {
+            // Update end position dynamically to keep up with player movement
+            transferableObject.transform.position = Vector3.Lerp(startPos, transform.position, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure final position matches player's position
+        transferableObject.transform.position = transform.position;
+        transferableObject.transform.SetParent(transform); // Parent the object to the player
+        isTransferring = false;
+    }
+
 }
