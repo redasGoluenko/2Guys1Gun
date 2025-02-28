@@ -219,6 +219,8 @@ GameObject:
   - component: {fileID: 182118398}
   - component: {fileID: 182118397}
   - component: {fileID: 182118402}
+  - component: {fileID: 182118404}
+  - component: {fileID: 182118403}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -238,7 +240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc7cd4b1fc335a47abd4fdf7c10b909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPlayer: {fileID: 1315366516}
   rb: {fileID: 182118399}
   groundCheck: {fileID: 1140431807}
   groundLayer:
@@ -247,13 +248,6 @@ MonoBehaviour:
   jumpKey: 119
   leftKey: 97
   rightKey: 100
-  transferKey: 256
-  shootKey: 306
-  transferableObject: {fileID: 96203386}
-  shootableObject: {fileID: 1714085308}
-  transferSpeed: 100
-  hasBall: 1
-  shootForce: 5
 --- !u!61 &182118398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -411,6 +405,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reduceAmount: 0.5
+--- !u!114 &182118403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182118396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25baed34615606344b5997bcac84f042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferableObject: {fileID: 96203386}
+  transferSpeed: 20
+  transferKey: 256
+  hasBall: 0
+  otherPlayer: {fileID: 1315366522}
+--- !u!114 &182118404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182118396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb68542306716464ab5eed75e94feae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootableObject: {fileID: 1714085308}
+  shootForce: 10
+  shootKey: 306
 --- !u!1 &219317467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1484,8 @@ GameObject:
   - component: {fileID: 1315366517}
   - component: {fileID: 1315366516}
   - component: {fileID: 1315366521}
+  - component: {fileID: 1315366523}
+  - component: {fileID: 1315366522}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -1477,7 +1505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc7cd4b1fc335a47abd4fdf7c10b909, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherPlayer: {fileID: 182118397}
   rb: {fileID: 1315366518}
   groundCheck: {fileID: 792771152}
   groundLayer:
@@ -1486,13 +1513,6 @@ MonoBehaviour:
   jumpKey: 273
   leftKey: 276
   rightKey: 275
-  transferKey: 32
-  shootKey: 270
-  transferableObject: {fileID: 96203386}
-  shootableObject: {fileID: 1714085308}
-  transferSpeed: 100
-  hasBall: 0
-  shootForce: 5
 --- !u!61 &1315366517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1649,6 +1669,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reduceAmount: 0.5
+--- !u!114 &1315366522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315366515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25baed34615606344b5997bcac84f042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferableObject: {fileID: 96203386}
+  transferSpeed: 20
+  transferKey: 32
+  hasBall: 0
+  otherPlayer: {fileID: 182118403}
+--- !u!114 &1315366523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315366515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb68542306716464ab5eed75e94feae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootableObject: {fileID: 1714085308}
+  shootForce: 10
+  shootKey: 270
 --- !u!1 &1480433572
 GameObject:
   m_ObjectHideFlags: 0
