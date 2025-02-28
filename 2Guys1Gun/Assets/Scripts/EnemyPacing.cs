@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MoveBackAndForth : MonoBehaviour
+public class EnemyPacing : MonoBehaviour
 {
     public float moveDistance = 5f; // Distance to move to the right
     public float moveSpeed = 2f; // Speed of movement

@@ -109,8 +109,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot()
     {
-        // Instantiate the shootable object at the player's position
-        GameObject copy = Instantiate(shootableObject, transform.position, Quaternion.identity);
+        // Define an offset in the direction the player is facing
+        float offsetDistance = 0.5f; // Adjust this value to set how far from the player the projectile spawns
+        Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
+        Vector3 spawnPosition = transform.position + (Vector3)(direction * offsetDistance);
+
+        // Instantiate the shootable object at the adjusted position
+        GameObject copy = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
 
         // Scale down the object to 0.125x of its original size
         copy.transform.localScale = new Vector3(0.125f, 0.125f, 0.125f);
@@ -127,14 +132,13 @@ public class PlayerMovement : MonoBehaviour
         Rigidbody2D copyRb = copy.GetComponent<Rigidbody2D>();
         if (copyRb != null)
         {
-            // Use the player's facing direction to determine the shooting direction
-            Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
             copyRb.AddForce(direction * shootForce, ForceMode2D.Impulse);
         }
 
         // Destroy the projectile after 1 second
-        Destroy(copy, 1f);  // 'copy' is the projectile, and 1f is the delay (in seconds)
+        Destroy(copy, 1f);
     }
+
 
 
 

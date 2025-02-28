@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
@@ -9,17 +9,16 @@ public class EnemyHealth : MonoBehaviour
     public float reduceAmount = 0.2f;
 
     private void Start()
-    {      
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color; // Store the original color
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerProjectile"))
+        if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Collision detected");
-            Destroy(collision.gameObject); // Destroy projectile
+            Debug.Log("Collision detected");          
             DarkenObject(); // Make the object darker
         }
     }
@@ -39,7 +38,12 @@ public class EnemyHealth : MonoBehaviour
 
         if (darknessLevel <= 0f)
         {
-            Destroy(gameObject); // Destroy object when fully dark
+            //destroy all objects tagged "Player"
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in players)
+            {
+                Destroy(player);
+            }
         }
     }
 }
