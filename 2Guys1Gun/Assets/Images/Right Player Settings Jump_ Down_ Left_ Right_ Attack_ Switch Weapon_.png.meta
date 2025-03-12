@@ -1,0 +1,1877 @@
+fileFormatVersion: 2
+guid: 81c2e5b9cc1c5424596f9250feb1faeb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3991164012142568015
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__0
+  - first:
+      213: 6414951406326903854
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__1
+  - first:
+      213: -8383196900370409487
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__2
+  - first:
+      213: -1820412313655104840
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__3
+  - first:
+      213: -3685524057649855258
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__4
+  - first:
+      213: -3823045544707102252
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__5
+  - first:
+      213: 1611940769519141075
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__6
+  - first:
+      213: 5123356553848528878
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__7
+  - first:
+      213: 6878100613264701234
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__8
+  - first:
+      213: 4697489725540105110
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__9
+  - first:
+      213: 8648071372809306995
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__10
+  - first:
+      213: -859833879639175528
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__11
+  - first:
+      213: 6949083335973774341
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__12
+  - first:
+      213: 1240436666879243387
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__13
+  - first:
+      213: -8381167351054438658
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__14
+  - first:
+      213: -5213227565904266203
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__15
+  - first:
+      213: 1511706779502967628
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__16
+  - first:
+      213: -7929310863077820548
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__17
+  - first:
+      213: -189237693906299457
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__18
+  - first:
+      213: -6610965548833490625
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__19
+  - first:
+      213: -3078955606492466932
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__20
+  - first:
+      213: 7652719290252282037
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__21
+  - first:
+      213: 1145536135390624041
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__22
+  - first:
+      213: 7295364285105323861
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__23
+  - first:
+      213: 2428882726926057834
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__24
+  - first:
+      213: 6421341607928415120
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__25
+  - first:
+      213: -6579134663444794028
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__26
+  - first:
+      213: 8851598858306302853
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__27
+  - first:
+      213: -2674912363622354760
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__28
+  - first:
+      213: 4174380421743878580
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__29
+  - first:
+      213: -20570813966565228
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__30
+  - first:
+      213: -3240539662903572913
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__31
+  - first:
+      213: 5000993848370950934
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__32
+  - first:
+      213: -3865339216961354533
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__33
+  - first:
+      213: 241093770191481247
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__34
+  - first:
+      213: -6243712699394001427
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__35
+  - first:
+      213: 1610970436231105141
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__36
+  - first:
+      213: 5086915199420272227
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__37
+  - first:
+      213: 2284554026685193415
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__38
+  - first:
+      213: 8588067881604928563
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__39
+  - first:
+      213: 2007207420217328201
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__40
+  - first:
+      213: -2549463142602805924
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__41
+  - first:
+      213: 6221773495726061403
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__42
+  - first:
+      213: -7439157766277652156
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__43
+  - first:
+      213: 1855138473698549373
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__44
+  - first:
+      213: 1067837211560245339
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__45
+  - first:
+      213: 2059458378174465455
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__46
+  - first:
+      213: -6358778614460147848
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__47
+  - first:
+      213: -5501890633606922395
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__48
+  - first:
+      213: -3245186425530050409
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__49
+  - first:
+      213: 3925279030600069972
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__50
+  - first:
+      213: -17787685730122989
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__51
+  - first:
+      213: 7528430777232071407
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__52
+  - first:
+      213: 1202544241644930042
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__53
+  - first:
+      213: 242076320203129542
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__54
+  - first:
+      213: -1755814172285931241
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__55
+  - first:
+      213: 5521947772135152807
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__56
+  - first:
+      213: -1119132013081433470
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__57
+  - first:
+      213: 7143250514607273832
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__58
+  - first:
+      213: 7701077295791980918
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__59
+  - first:
+      213: 5853000700235904830
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__60
+  - first:
+      213: 4597382476352674738
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__61
+  - first:
+      213: -5588814066529036381
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__62
+  - first:
+      213: -7139193998198820978
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__63
+  - first:
+      213: 455742900435621764
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__64
+  - first:
+      213: 5756176476195326955
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__65
+  - first:
+      213: -5682650866643753936
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__66
+  - first:
+      213: 7408513719273514051
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__67
+  - first:
+      213: -6868067645532766196
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__68
+  - first:
+      213: 4668575797584378901
+    second: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__69
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 652
+        width: 39
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42a410e586736730800000000000000
+      internalID: 3991164012142568015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 694
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e24f181f05c760950800000000000000
+      internalID: 6414951406326903854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 641
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7144fc5d6e8ab80800000000000000
+      internalID: -8383196900370409487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 652
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba27db45a89cb6e0800000000000000
+      internalID: -1820412313655104840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 652
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4cf9475636adcc0800000000000000
+      internalID: -3685524057649855258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__5
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 652
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9e79b1550d1fac0800000000000000
+      internalID: -3823045544707102252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 652
+        width: 13
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d08826e693ce5610800000000000000
+      internalID: 1611940769519141075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 652
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef9fc914a1d91740800000000000000
+      internalID: 5123356553848528878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__8
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 641
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237f907e01ce37f50800000000000000
+      internalID: 6878100613264701234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__9
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 652
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b7dda5406d03140800000000000000
+      internalID: 4697489725540105110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__10
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 652
+        width: 35
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3730688181f140870800000000000000
+      internalID: 8648071372809306995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__11
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 652
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ec24e54a14114f0800000000000000
+      internalID: -859833879639175528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__12
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 652
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504ad4be97a107060800000000000000
+      internalID: 6949083335973774341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__13
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 652
+        width: 29
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74f4bf839ae63110800000000000000
+      internalID: 1240436666879243387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__14
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 652
+        width: 29
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efe6c4513bc10bb80800000000000000
+      internalID: -8381167351054438658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__15
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 694
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c70015625e6a7b0800000000000000
+      internalID: -5213227565904266203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__16
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 652
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4bf2dc7e49aaf410800000000000000
+      internalID: 1511706779502967628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__17
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 641
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77b99408cd65f190800000000000000
+      internalID: -7929310863077820548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__18
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 652
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb5d99ce151bf5df0800000000000000
+      internalID: -189237693906299457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 652
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f393f671cd12144a0800000000000000
+      internalID: -6610965548833490625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__20
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 652
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01b1db503a5545d0800000000000000
+      internalID: -3078955606492466932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 545
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8444d06abe33a60800000000000000
+      internalID: 7652719290252282037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__22
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 545
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 929f45bbb03c5ef00800000000000000
+      internalID: 1145536135390624041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__23
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 545
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f36c03a275e3560800000000000000
+      internalID: 7295364285105323861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__24
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 534
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a61828ba8ff15b120800000000000000
+      internalID: 2428882726926057834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__25
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 577
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0934202bb203d1950800000000000000
+      internalID: 6421341607928415120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__26
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 545
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455f9ef91e732b4a0800000000000000
+      internalID: -6579134663444794028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 438
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583b99b834237da70800000000000000
+      internalID: 8851598858306302853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__28
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 438
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b03df8a06dc0ead0800000000000000
+      internalID: -2674912363622354760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 438
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1a36370e06ee930800000000000000
+      internalID: 4174380421743878580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__30
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 438
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49048c424fae6bff0800000000000000
+      internalID: -20570813966565228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__31
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 470
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f468110885a4703d0800000000000000
+      internalID: -3240539662903572913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__32
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 438
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6137010a869176540800000000000000
+      internalID: 5000993848370950934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 331
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4c1ac267e8b5ac0800000000000000
+      internalID: -3865339216961354533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__34
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 331
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99a2d1b189885300800000000000000
+      internalID: 241093770191481247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__35
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 331
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de576096160e959a0800000000000000
+      internalID: -6243712699394001427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__36
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 331
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a063393115b5610800000000000000
+      internalID: 1610970436231105141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__37
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 363
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e0bf71c6a589640800000000000000
+      internalID: 5086915199420272227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__38
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 331
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc52ce78cd54bf10800000000000000
+      internalID: 2284554026685193415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334d00e9c32fe2770800000000000000
+      internalID: 8588067881604928563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__40
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 266
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942059893880bdb10800000000000000
+      internalID: 2007207420217328201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__41
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 213
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d653987cc7e9cd0800000000000000
+      internalID: -2549463142602805924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__42
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 224
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5731bda70e285650800000000000000
+      internalID: 6221773495726061403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__43
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 224
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441aee80d6dc2c890800000000000000
+      internalID: -7439157766277652156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__44
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 256
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7e56f5ec96ceb910800000000000000
+      internalID: 1855138473698549373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__45
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 224
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b58fdf84948b1de00800000000000000
+      internalID: 1067837211560245339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__46
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 224
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa58ac4cb7aa49c10800000000000000
+      internalID: 2059458378174465455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 117
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87790c75a8411c7a0800000000000000
+      internalID: -6358778614460147848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__48
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 117
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f7fc67e9b55a3b0800000000000000
+      internalID: -5501890633606922395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__49
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 117
+        width: 29
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7989c54c328c6f2d0800000000000000
+      internalID: -3245186425530050409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__50
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 117
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453f4373b74697630800000000000000
+      internalID: 3925279030600069972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__51
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 117
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3130eaea13ec0cff0800000000000000
+      internalID: -17787685730122989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__52
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 117
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea190197eb5a7860800000000000000
+      internalID: 7528430777232071407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__53
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 149
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af300fdcd9b40b010800000000000000
+      internalID: 1202544241644930042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__54
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 117
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2cd3271270c5300800000000000000
+      internalID: 242076320203129542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711fc41205812a7e0800000000000000
+      internalID: -1755814172285931241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__56
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 10
+        width: 57
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac10620e36e1ac40800000000000000
+      internalID: 5521947772135152807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__57
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 52
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28a638f0d5b0870f0800000000000000
+      internalID: -1119132013081433470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__58
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 10
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867fac81f7ce12360800000000000000
+      internalID: 7143250514607273832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__59
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 10
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671c18b9ff8bfda60800000000000000
+      internalID: 7701077295791980918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__60
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 10
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e377ca750290a3150800000000000000
+      internalID: 5853000700235904830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__61
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 10
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb5b97110f2dcf30800000000000000
+      internalID: 4597382476352674738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__62
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 10
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a794d0a73b8072b0800000000000000
+      internalID: -5588814066529036381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__63
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 10
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8f22ca32ec7cec90800000000000000
+      internalID: -7139193998198820978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__64
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4871f59d0cf135600800000000000000
+      internalID: 455742900435621764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__65
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 10
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb0510f10c02ef40800000000000000
+      internalID: 5756176476195326955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__66
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 10
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034222f052b2321b0800000000000000
+      internalID: -5682650866643753936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__67
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 42
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344e7e6c9f350d660800000000000000
+      internalID: 7408513719273514051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__68
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 10
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c008aae6dd8bfa0a0800000000000000
+      internalID: -6868067645532766196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__69
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 10
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51cb006e3fc1ac040800000000000000
+      internalID: 4668575797584378901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__0: 3991164012142568015
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__1: 6414951406326903854
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__10: 8648071372809306995
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__11: -859833879639175528
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__12: 6949083335973774341
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__13: 1240436666879243387
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__14: -8381167351054438658
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__15: -5213227565904266203
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__16: 1511706779502967628
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__17: -7929310863077820548
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__18: -189237693906299457
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__19: -6610965548833490625
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__2: -8383196900370409487
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__20: -3078955606492466932
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__21: 7652719290252282037
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__22: 1145536135390624041
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__23: 7295364285105323861
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__24: 2428882726926057834
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__25: 6421341607928415120
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__26: -6579134663444794028
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__27: 8851598858306302853
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__28: -2674912363622354760
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__29: 4174380421743878580
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__3: -1820412313655104840
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__30: -20570813966565228
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__31: -3240539662903572913
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__32: 5000993848370950934
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__33: -3865339216961354533
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__34: 241093770191481247
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__35: -6243712699394001427
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__36: 1610970436231105141
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__37: 5086915199420272227
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__38: 2284554026685193415
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__39: 8588067881604928563
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__4: -3685524057649855258
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__40: 2007207420217328201
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__41: -2549463142602805924
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__42: 6221773495726061403
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__43: -7439157766277652156
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__44: 1855138473698549373
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__45: 1067837211560245339
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__46: 2059458378174465455
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__47: -6358778614460147848
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__48: -5501890633606922395
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__49: -3245186425530050409
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__5: -3823045544707102252
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__50: 3925279030600069972
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__51: -17787685730122989
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__52: 7528430777232071407
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__53: 1202544241644930042
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__54: 242076320203129542
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__55: -1755814172285931241
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__56: 5521947772135152807
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__57: -1119132013081433470
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__58: 7143250514607273832
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__59: 7701077295791980918
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__6: 1611940769519141075
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__60: 5853000700235904830
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__61: 4597382476352674738
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__62: -5588814066529036381
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__63: -7139193998198820978
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__64: 455742900435621764
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__65: 5756176476195326955
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__66: -5682650866643753936
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__67: 7408513719273514051
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__68: -6868067645532766196
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__69: 4668575797584378901
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__7: 5123356553848528878
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__8: 6878100613264701234
+      Right Player Settings Jump_ Down_ Left_ Right_ Attack_ Switch Weapon__9: 4697489725540105110
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
