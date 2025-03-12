@@ -1,0 +1,577 @@
+fileFormatVersion: 2
+guid: ae8280e0d5e293847a7a3d4cb97e752c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1357619755914828975
+    second: Play Settings Quit_0
+  - first:
+      213: -6527342911820730917
+    second: Play Settings Quit_1
+  - first:
+      213: -3147497785614806533
+    second: Play Settings Quit_2
+  - first:
+      213: -5997373692745899556
+    second: Play Settings Quit_3
+  - first:
+      213: 8363747973655185245
+    second: Play Settings Quit_4
+  - first:
+      213: -2777474129350109826
+    second: Play Settings Quit_5
+  - first:
+      213: -3007923001596772157
+    second: Play Settings Quit_6
+  - first:
+      213: 8500413199567729317
+    second: Play Settings Quit_7
+  - first:
+      213: -9060084172361786020
+    second: Play Settings Quit_8
+  - first:
+      213: -1690091456347145091
+    second: Play Settings Quit_9
+  - first:
+      213: -5699700549392237566
+    second: Play Settings Quit_10
+  - first:
+      213: 1885865640946303941
+    second: Play Settings Quit_11
+  - first:
+      213: -3927380666961300078
+    second: Play Settings Quit_12
+  - first:
+      213: -8195133113478458349
+    second: Play Settings Quit_13
+  - first:
+      213: 171605534092130523
+    second: Play Settings Quit_14
+  - first:
+      213: 8585809147068590708
+    second: Play Settings Quit_15
+  - first:
+      213: 6803430657737472044
+    second: Play Settings Quit_16
+  - first:
+      213: 748415823113792940
+    second: Play Settings Quit_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Play Settings Quit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 39
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac1b5b99fb37d210800000000000000
+      internalID: 1357619755914828975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 224
+        width: 14
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdde2cd74383a65a0800000000000000
+      internalID: -6527342911820730917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 224
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1d91da077d154d0800000000000000
+      internalID: -3147497785614806533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 213
+        width: 35
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1ab92e66c05cca0800000000000000
+      internalID: -5997373692745899556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 117
+        width: 39
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d574c901870021470800000000000000
+      internalID: 8363747973655185245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 117
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e75df3bbefd6479d0800000000000000
+      internalID: -2777474129350109826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 117
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0091a77f5b146d0800000000000000
+      internalID: -3007923001596772157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 117
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2b64494c887f570800000000000000
+      internalID: 8500413199567729317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 159
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d9c37927d144280800000000000000
+      internalID: -9060084172361786020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_9
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 117
+        width: 40
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c718266c69b88e0800000000000000
+      internalID: -1690091456347145091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_10
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 106
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c70637c8896e0b0800000000000000
+      internalID: -5699700549392237566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 117
+        width: 34
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c308b60fc0fb2a10800000000000000
+      internalID: 1885865640946303941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_12
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 117
+        width: 13
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295f80077142f79c0800000000000000
+      internalID: -3927380666961300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 39
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 314531c5ad9054e80800000000000000
+      internalID: -8195133113478458349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_14
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 10
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd87d05f25aa16200800000000000000
+      internalID: 171605534092130523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_15
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 52
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47aa2500eebe62770800000000000000
+      internalID: 8585809147068590708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 10
+        width: 30
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28b1781324aa6e50800000000000000
+      internalID: 6803430657737472044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Settings Quit_17
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 10
+        width: 14
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cadaaf0d938e26a00800000000000000
+      internalID: 748415823113792940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Play Settings Quit_0: 1357619755914828975
+      Play Settings Quit_1: -6527342911820730917
+      Play Settings Quit_10: -5699700549392237566
+      Play Settings Quit_11: 1885865640946303941
+      Play Settings Quit_12: -3927380666961300078
+      Play Settings Quit_13: -8195133113478458349
+      Play Settings Quit_14: 171605534092130523
+      Play Settings Quit_15: 8585809147068590708
+      Play Settings Quit_16: 6803430657737472044
+      Play Settings Quit_17: 748415823113792940
+      Play Settings Quit_2: -3147497785614806533
+      Play Settings Quit_3: -5997373692745899556
+      Play Settings Quit_4: 8363747973655185245
+      Play Settings Quit_5: -2777474129350109826
+      Play Settings Quit_6: -3007923001596772157
+      Play Settings Quit_7: 8500413199567729317
+      Play Settings Quit_8: -9060084172361786020
+      Play Settings Quit_9: -1690091456347145091
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
