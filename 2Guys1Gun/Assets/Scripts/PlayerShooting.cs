@@ -7,6 +7,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private KeyCode shootKey = KeyCode.F;
 
     private PlayerMovement playerMovement;
+    public WeaponTransfer weaponTransfer;
 
     private void Start()
     {
@@ -15,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(shootKey))
+        if (Input.GetKeyDown(shootKey) && weaponTransfer.hasBall)
         {
             Shoot();
         }
