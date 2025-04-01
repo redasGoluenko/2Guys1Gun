@@ -1,5 +1,5 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
     private Color originalColor;
     private float darknessLevel = 1f; // Start at full brightness
     public float reduceAmount = 0.2f;
+    public float lavaDamageRate = 0.5f; // Damage interval in seconds
+    private bool isTakingLavaDamage = false;
 
     private void Start()
     {
@@ -18,8 +20,35 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Collision detected");          
+            Debug.Log("Collision detected");
             DarkenObject(); // Make the object darker
+        }
+        if (collision.CompareTag("Lava"))
+        {
+            Debug.Log("Lava detected");
+            if (!isTakingLavaDamage)
+            {
+                isTakingLavaDamage = true;
+                StartCoroutine(TakeLavaDamage());
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Lava"))
+        {
+            Debug.Log("Exited lava");
+            isTakingLavaDamage = false;
+        }
+    }
+
+    private IEnumerator TakeLavaDamage()
+    {
+        while (isTakingLavaDamage)
+        {
+            DarkenObject(); // Apply damage effect
+            yield return new WaitForSeconds(lavaDamageRate); // Wait before applying damage again
         }
     }
 
@@ -38,12 +67,16 @@ public class PlayerHealth : MonoBehaviour
 
         if (darknessLevel <= 0f)
         {
-            //destroy all objects tagged "Player"
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            foreach (GameObject player in players)
-            {
-                Destroy(player);
-            }
+            DestroyAllPlayers();
+        }
+    }
+
+    private void DestroyAllPlayers()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            Destroy(player);
         }
     }
 }
