@@ -973,7 +973,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  enemyDamage: 20
   lavaDamage: 5
   lavaDamageRate: 0.5
 --- !u!114 &182118403
@@ -1278,7 +1277,6 @@ GameObject:
   m_Component:
   - component: {fileID: 379756007}
   - component: {fileID: 379756006}
-  - component: {fileID: 379756005}
   - component: {fileID: 379756008}
   - component: {fileID: 379756009}
   m_Layer: 0
@@ -1288,20 +1286,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &379756005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379756004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b6af282696e859418083461f3fae40a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDistance: 5
-  moveSpeed: 5
 --- !u!212 &379756006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1417,10 +1401,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 379756004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b18090d6a3e3f47b8a3660e14078ae, type: 3}
+  m_Script: {fileID: 11500000, guid: aceb11effe99b1c479889b2dd00f0f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reduceAmount: 0.1
+  maxHealth: 100
+  moveSpeed: 5
+  damage: 10
+  moveDistance: 5
 --- !u!1 &382823671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,7 +2622,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1085890075}
   - component: {fileID: 1085890074}
-  - component: {fileID: 1085890076}
   - component: {fileID: 1085890077}
   - component: {fileID: 1085890078}
   m_Layer: 0
@@ -2714,20 +2700,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1085890076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085890073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b6af282696e859418083461f3fae40a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDistance: 7
-  moveSpeed: 5
 --- !u!70 &1085890077
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2774,10 +2746,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1085890073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b18090d6a3e3f47b8a3660e14078ae, type: 3}
+  m_Script: {fileID: 11500000, guid: aceb11effe99b1c479889b2dd00f0f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reduceAmount: 0.1
+  maxHealth: 100
+  moveSpeed: 2
+  damage: 10
+  moveDistance: 5
 --- !u!1 &1087396333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3500,7 +3475,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  enemyDamage: 20
   lavaDamage: 5
   lavaDamageRate: 0.5
 --- !u!114 &1315366522
