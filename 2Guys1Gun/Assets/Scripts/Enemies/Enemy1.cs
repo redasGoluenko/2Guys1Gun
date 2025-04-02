@@ -1,22 +1,16 @@
 using UnityEngine;
 
-public class EnemyPacing : MonoBehaviour
+public class Enemy1 : EnemyBase
 {
-    public float moveDistance = 5f; // Distance to move to the right
-    public float moveSpeed = 2f; // Speed of movement
+    public float moveDistance = 5f;  
     private Vector3 startPosition;
     private bool movingRight = true;
 
-    void Start()
-    {
-        startPosition = transform.position;
-    }
-
-    void Update()
+    public override void Move()
     {
         if (movingRight)
         {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
             if (transform.position.x >= startPosition.x + moveDistance)
             {
                 movingRight = false;
@@ -24,11 +18,21 @@ public class EnemyPacing : MonoBehaviour
         }
         else
         {
-            transform.position -= Vector3.right * moveSpeed * Time.deltaTime;
+            transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
             if (transform.position.x <= startPosition.x)
             {
                 movingRight = true;
             }
         }
+    }
+
+    protected override void Start()
+    {
+        base.Start(); 
+        startPosition = transform.position; 
+    }
+    void Update()
+    {
+        Move();
     }
 }

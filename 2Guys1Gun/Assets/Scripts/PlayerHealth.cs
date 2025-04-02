@@ -5,25 +5,33 @@ public class PlayerHealth : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
-    private float darknessLevel = 1f; // Start at full brightness
-    public float reduceAmount = 0.2f;
-    public float lavaDamageRate = 0.5f; // Damage interval in seconds
+
+    [SerializeField] public int maxHealth = 100;
+    [SerializeField] private int currentHealth;
+    [SerializeField] public int lavaDamage = 0;
+    [SerializeField] public float lavaDamageRate = 0.2f;
     private bool isTakingLavaDamage = false;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColor = spriteRenderer.color; // Store the original color
+        originalColor = spriteRenderer.color;
+        currentHealth = maxHealth;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Collision detected");
-            DarkenObject(); // Make the object darker
+            // Get the EnemyBase component and retrieve its damage value
+            EnemyBase enemy = collision.GetComponent<EnemyBase>();
+            if (enemy != null)
+            {
+                Debug.Log("Hit by enemy");
+                TakeDamage(enemy.damage);
+            }
         }
-        if (collision.CompareTag("Lava"))
+        else if (collision.CompareTag("Lava"))
         {
             Debug.Log("Lava detected");
             if (!isTakingLavaDamage)
@@ -47,28 +55,37 @@ public class PlayerHealth : MonoBehaviour
     {
         while (isTakingLavaDamage)
         {
-            DarkenObject(); // Apply damage effect
-            yield return new WaitForSeconds(lavaDamageRate); // Wait before applying damage again
+            TakeDamage(lavaDamage);
+            yield return new WaitForSeconds(lavaDamageRate);
         }
     }
 
-    private void DarkenObject()
+    public void TakeDamage(int damage)
     {
-        darknessLevel -= reduceAmount; // Reduce brightness (adjust step size as needed)
-        darknessLevel = Mathf.Clamp(darknessLevel, 0f, 1f); // Keep within bounds
+        currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        // Apply the darkness level while maintaining original color proportions
-        spriteRenderer.color = new Color(
-            originalColor.r * darknessLevel,
-            originalColor.g * darknessLevel,
-            originalColor.b * darknessLevel,
-            originalColor.a // Keep alpha unchanged
-        );
+        UpdateColor();
 
-        if (darknessLevel <= 0f)
+        if (currentHealth <= 0)
         {
             DestroyAllPlayers();
         }
+    }
+
+    private void UpdateColor()
+    {
+        float healthRatio = (float)currentHealth / maxHealth;
+
+        float minBrightness = 0.3f;
+        float brightness = Mathf.Lerp(minBrightness, 1f, healthRatio);
+
+        spriteRenderer.color = new Color(
+            originalColor.r * brightness,
+            originalColor.g * brightness,
+            originalColor.b * brightness,
+            originalColor.a
+        );
     }
 
     private void DestroyAllPlayers()

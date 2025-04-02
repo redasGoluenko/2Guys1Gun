@@ -519,7 +519,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -971,7 +971,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b78e7077da433941be9c6597b2710a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reduceAmount: 0.5
+  maxHealth: 100
+  currentHealth: 0
+  enemyDamage: 20
+  lavaDamage: 5
   lavaDamageRate: 0.5
 --- !u!114 &182118403
 MonoBehaviour:
@@ -3495,7 +3498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b78e7077da433941be9c6597b2710a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reduceAmount: 0.5
+  maxHealth: 100
+  currentHealth: 0
+  enemyDamage: 20
+  lavaDamage: 5
   lavaDamageRate: 0.5
 --- !u!114 &1315366522
 MonoBehaviour:
