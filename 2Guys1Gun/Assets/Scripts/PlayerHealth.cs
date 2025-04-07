@@ -93,7 +93,7 @@ public class PlayerHealth : MonoBehaviour
         );
     }
 
-    private void GameOver()
+    public void GameOver()
     {            
         if (gameOverUI != null)
         {
