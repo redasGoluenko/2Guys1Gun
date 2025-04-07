@@ -16,9 +16,13 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(shootKey) && weaponTransfer.hasBall)
+        // Only shoot if player has the weapon and it's not in transit
+        if (Input.GetKeyDown(shootKey))
         {
-            Shoot();
+            if (weaponTransfer != null && weaponTransfer.hasBall && !weaponTransfer.IsWeaponInTransit)
+            {
+                Shoot();
+            }
         }
     }
 
@@ -26,7 +30,7 @@ public class PlayerShooting : MonoBehaviour
     {
         if (shootableObject == null) return;
 
-        float offsetDistance = 0.5f;
+        float offsetDistance = 0.25f;
         Vector2 direction = playerMovement.IsFacingRight() ? Vector2.right : Vector2.left;
         Vector3 spawnPosition = transform.position + (Vector3)(direction * offsetDistance);
 
