@@ -12,11 +12,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public float lavaDamageRate = 0.2f;
     private bool isTakingLavaDamage = false;
 
+    // Reference to the UI GameObject that will show the game over screen
+    public GameObject gameOverUI;
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
         currentHealth = maxHealth;
+
+        Time.timeScale = 1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,7 +74,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            DestroyAllPlayers();
+            GameOver();
         }
     }
 
@@ -88,12 +93,12 @@ public class PlayerHealth : MonoBehaviour
         );
     }
 
-    private void DestroyAllPlayers()
-    {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject player in players)
+    private void GameOver()
+    {            
+        if (gameOverUI != null)
         {
-            Destroy(player);
+            gameOverUI.SetActive(true);
         }
+        Time.timeScale = 0;
     }
 }
