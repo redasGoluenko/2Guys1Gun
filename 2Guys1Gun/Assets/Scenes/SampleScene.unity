@@ -1486,15 +1486,11 @@ MonoBehaviour:
   moveSpeed: 5
   damage: 10
   targetPlayer: {fileID: 182118401}
-  moveDistance: 5
-  jumpForce: 7
-  jumpCooldown: 1
   chaseDistance: 8
   stoppingDistance: 1
-  groundCheckDistance: 0.2
-  ledgeCheckDistance: 0.5
   obstacleCheckDistance: 0.5
-  obstacleLayer:
+  shellRadius: 0.1
+  collisionLayer:
     serializedVersion: 2
     m_Bits: 64
 --- !u!50 &379756010
@@ -3153,15 +3149,11 @@ MonoBehaviour:
   moveSpeed: 2
   damage: 10
   targetPlayer: {fileID: 1315366520}
-  moveDistance: 5
-  jumpForce: 7
-  jumpCooldown: 1
   chaseDistance: 8
   stoppingDistance: 1
-  groundCheckDistance: 0.2
-  ledgeCheckDistance: 0.5
   obstacleCheckDistance: 0.5
-  obstacleLayer:
+  shellRadius: 0.1
+  collisionLayer:
     serializedVersion: 2
     m_Bits: 64
 --- !u!50 &1085890079
