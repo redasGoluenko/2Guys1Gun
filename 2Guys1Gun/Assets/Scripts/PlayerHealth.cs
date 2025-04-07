@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+// PlayerHealth script to manage the player's health, damage, and game over state
 public class PlayerHealth : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
@@ -12,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public float lavaDamageRate = 0.2f;
     private bool isTakingLavaDamage = false;
 
-    // Reference to the UI GameObject that will show the game over screen
     public GameObject gameOverUI;
 
     private void Start()
@@ -27,8 +27,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
-        {
-            // Get the EnemyBase component and retrieve its damage value
+        {       
             EnemyBase enemy = collision.GetComponent<EnemyBase>();
             if (enemy != null)
             {

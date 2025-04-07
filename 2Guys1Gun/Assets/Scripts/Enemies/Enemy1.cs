@@ -1,29 +1,30 @@
-using UnityEngine; // Provides Unity core functionality like GameObjects, physics, etc.
+using UnityEngine;
 
+//Enemy1 script to handle the enemy's movement and collision detection
 public class Enemy1 : EnemyBase
 {
     [Header("Movement Settings")]
-    public float chaseDistance = 8f;         // Max distance to start chasing player
-    public float stoppingDistance = 1f;      // Min distance to stop near player
+    public float chaseDistance = 8f; //distance to chase the player
+    public float stoppingDistance = 1f; //distance to stop chasing the player
 
     [Header("Collision Settings")]
-    public float obstacleCheckDistance = 0.5f; // Distance to detect obstacles ahead
-    public float shellRadius = 0.1f;          // Extra buffer for collision checks
-    public LayerMask collisionLayer;          // Layers that count as solid objects
+    public float obstacleCheckDistance = 0.5f; //distance to check for obstacles
+    public float shellRadius = 0.1f; //to avoid getting stuck in small gaps   
+    public LayerMask collisionLayer;          
 
-    private Rigidbody2D rb;                   // Physics component for movement
-    private Collider2D col;                   // Collision box for detection
-    private bool isFacingRight = true;        // Tracks if enemy faces right
-    private Vector2 movementDirection;        // Direction toward player
+    private Rigidbody2D rb;             
+    private Collider2D col;                   
+    private bool isFacingRight = true;        
+    private Vector2 movementDirection;       
 
-    protected override void Start() // Unity: Called on object initialization
+    protected override void Start()
     {
         base.Start();
-        rb = GetComponent<Rigidbody2D>(); // Gets Rigidbody2D component
-        col = GetComponent<Collider2D>(); // Gets Collider2D component
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
     }
 
-    void Update() // Unity: Called every frame
+    void Update()
     {
         if (targetPlayer == null) return;
 
@@ -31,19 +32,20 @@ public class Enemy1 : EnemyBase
         HandleFacingDirection();
     }
 
-    void FixedUpdate() // Unity: Called every physics step
+    void FixedUpdate()
     {
         Move();
         HandleVerticalCollision();
     }
 
+    //For vertical collision detection
     private void HandleVerticalCollision()
     {
-        if (rb.velocity.y <= 0) // Check only when falling
+        if (rb.velocity.y <= 0)
         {
-            float distance = Mathf.Abs(rb.velocity.y) * Time.fixedDeltaTime + col.bounds.extents.y + shellRadius; // Distance to check below
+            float distance = Mathf.Abs(rb.velocity.y) * Time.fixedDeltaTime + col.bounds.extents.y + shellRadius;
 
-            RaycastHit2D hit = Physics2D.BoxCast( // Casts a box downward
+            RaycastHit2D hit = Physics2D.BoxCast(
                 col.bounds.center,
                 col.bounds.size * 0.9f,
                 0f,
@@ -53,38 +55,40 @@ public class Enemy1 : EnemyBase
 
             if (hit.collider != null)
             {
-                rb.velocity = new Vector2(rb.velocity.x, 0); // Stop falling
-                transform.position = new Vector2( // Snap to ground
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+                transform.position = new Vector2(
                     transform.position.x,
                     hit.point.y + col.bounds.extents.y + shellRadius);
             }
         }
     }
 
+    //For horizontal movement
     public override void Move()
     {
         if (targetPlayer == null) return;
 
-        float distanceToPlayer = Vector2.Distance(transform.position, targetPlayer.position); // Distance to player
+        float distanceToPlayer = Vector2.Distance(transform.position, targetPlayer.position);
 
         if (distanceToPlayer > stoppingDistance && distanceToPlayer <= chaseDistance)
         {
-            Vector2 moveVelocity = movementDirection * moveSpeed; // Set movement speed
+            Vector2 moveVelocity = movementDirection * moveSpeed;
             HandleHorizontalCollision(ref moveVelocity);
-            rb.velocity = new Vector2(moveVelocity.x, rb.velocity.y); // Apply horizontal velocity
+            rb.velocity = new Vector2(moveVelocity.x, rb.velocity.y);
         }
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y); // Stop moving horizontally
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
 
+    //For horizontal collision detection
     private void HandleHorizontalCollision(ref Vector2 moveVelocity)
     {
-        float direction = Mathf.Sign(moveVelocity.x); // Get movement direction
-        float distance = Mathf.Abs(moveVelocity.x) * Time.fixedDeltaTime + shellRadius; // Distance to check ahead
+        float direction = Mathf.Sign(moveVelocity.x);
+        float distance = Mathf.Abs(moveVelocity.x) * Time.fixedDeltaTime + shellRadius;
 
-        RaycastHit2D hit = Physics2D.BoxCast( // Casts a box forward
+        RaycastHit2D hit = Physics2D.BoxCast(
             col.bounds.center,
             col.bounds.size * 0.9f,
             0f,
@@ -94,14 +98,14 @@ public class Enemy1 : EnemyBase
 
         if (hit.collider != null)
         {
-            moveVelocity.x = 0; // Stop if hitting obstacle
+            moveVelocity.x = 0;
         }
     }
-
+    
     private void UpdateMovementDirection()
     {
-        Vector2 directionToPlayer = (targetPlayer.position - transform.position).normalized; // Normalized direction to player
-        movementDirection = new Vector2(directionToPlayer.x, 0); // Set horizontal direction
+        Vector2 directionToPlayer = (targetPlayer.position - transform.position).normalized;
+        movementDirection = new Vector2(directionToPlayer.x, 0);
     }
 
     private void HandleFacingDirection()
@@ -118,9 +122,9 @@ public class Enemy1 : EnemyBase
 
     private void Flip()
     {
-        isFacingRight = !isFacingRight; // Toggle facing direction
-        Vector3 scale = transform.localScale; // Get current scale
-        scale.x *= -1; // Flip horizontally
-        transform.localScale = scale; // Apply new scale
+        isFacingRight = !isFacingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }

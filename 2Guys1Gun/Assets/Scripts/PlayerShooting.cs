@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// PlayerShooting script to handle the shooting mechanics of the player
 public class PlayerShooting : MonoBehaviour
 {
     [SerializeField] private GameObject shootableObject;
@@ -15,8 +16,7 @@ public class PlayerShooting : MonoBehaviour
     }
 
     void Update()
-    {
-        // Only shoot if player has the weapon and it's not in transit
+    {     
         if (Input.GetKeyDown(shootKey))
         {
             if (weaponTransfer != null && weaponTransfer.hasBall && !weaponTransfer.IsWeaponInTransit)

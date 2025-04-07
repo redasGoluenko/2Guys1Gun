@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Projectile script to handle the projectile's behavior and collision detection
 public class Projectile : MonoBehaviour
 {
     public int damage = 25;
@@ -19,7 +20,7 @@ public class Projectile : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, LayerMask.GetMask("Ground"));
         if (hit.collider != null)
         {
-            Destroy(gameObject); // Hit ground or wall
+            Destroy(gameObject);
         }
     }
 

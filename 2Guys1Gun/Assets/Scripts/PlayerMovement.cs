@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+// PlayerMovement script to handle player movement, jumping
 public class PlayerMovement : MonoBehaviour
 {
     private float speed = 8.0f;

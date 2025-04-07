@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; // Import UI namespace
 
+// WeaponSlot script to manage the weapon slot UI
 public class WeaponSlot : MonoBehaviour
 {
     public WeaponTransfer weaponTransfer;
-    public Image weaponIcon; // UI Image for weapon visibility
-
-    // Start is called before the first frame update
+    public Image weaponIcon;
+   
     void Start()
     {
         if (weaponIcon != null)
@@ -16,8 +16,7 @@ public class WeaponSlot : MonoBehaviour
             weaponIcon.gameObject.SetActive(false); // Hide icon initially
         }
     }
-
-    // Update is called once per frame
+   
     void Update()
     {
         if (weaponIcon != null)

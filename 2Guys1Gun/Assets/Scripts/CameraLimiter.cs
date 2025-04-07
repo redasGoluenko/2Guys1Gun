@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// CameraLimiter script to limit the camera's position within specified bounds
 public class CameraLimiter : MonoBehaviour
 {
     public Transform target;

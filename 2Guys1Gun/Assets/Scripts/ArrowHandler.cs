@@ -1,77 +1,74 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for scene management
+using UnityEngine.SceneManagement;
 
+// Arrow Selector script to handle the selection of arrows in the main menu
 public class ArrowSelector : MonoBehaviour
 {
-    public GameObject playArrow;      // Reference to the Play Arrow
-    public GameObject settingsArrow;  // Reference to the Settings Arrow
-    public GameObject quitArrow;      // Reference to the Quit Arrow
-    private int selectedArrow = 0;    // Which arrow is selected (0 = Play, 1 = Settings, 2 = Quit)
+    public GameObject playArrow;     
+    public GameObject settingsArrow;
+    public GameObject quitArrow; 
+    private int selectedArrow = 0;
 
     void Start()
-    {
-        // Initially, only the play arrow is visible
+    {      
         playArrow.SetActive(true);
         settingsArrow.SetActive(false);
         quitArrow.SetActive(false);
     }
 
     void Update()
-    {
-        // Handle input for up/down arrows
+    {      
+        // Check for input to change the selected arrow
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            // Move selection up
+        {         
             selectedArrow = (selectedArrow == 0) ? 2 : selectedArrow - 1;
             UpdateArrowVisibility();
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            // Move selection down
+        {           
             selectedArrow = (selectedArrow == 2) ? 0 : selectedArrow + 1;
             UpdateArrowVisibility();
         }
-
-        // Handle Enter or Spacebar input
+     
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
         {
             SelectOption();
         }
     }
 
+    // Update the visibility of the arrows based on the selected option
     void UpdateArrowVisibility()
-    {
-        // Hide all arrows
+    {    
         playArrow.SetActive(false);
         settingsArrow.SetActive(false);
         quitArrow.SetActive(false);
-
-        // Show the selected arrow
+       
         switch (selectedArrow)
         {
-            case 0: // Play Arrow
+            case 0:
                 playArrow.SetActive(true);
                 break;
-            case 1: // Settings Arrow
+            case 1:
                 settingsArrow.SetActive(true);
                 break;
-            case 2: // Quit Arrow
+            case 2:
                 quitArrow.SetActive(true);
                 break;
         }
     }
 
+    // Load the selected scene or quit the application
     void SelectOption()
     {
         switch (selectedArrow)
         {
-            case 0: // Play Arrow - Load SampleScene
+            case 0:
                 SceneManager.LoadScene("SampleScene");
                 break;
-            case 1: // Settings Arrow - Load Settings Scene
+            case 1:
                 SceneManager.LoadScene("Settings");
                 break;
-            case 2: // Quit Arrow - Exit Game
+            case 2:
                 Application.Quit();
 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false; // Stop play mode in Unity Editor
