@@ -1,13 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-// PlayerMovement script to handle player movement, jumping
 public class PlayerMovement : MonoBehaviour
 {
     private float speed = 8.0f;
     private float jumpingPower = 16.0f;
-    private bool isFacingRight = true;  
-    private float horizontal;   
+    private float horizontal;
+    private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -18,9 +17,35 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode rightKey = KeyCode.D;
 
     public Animator Animation;
+    public DialogueTypewriter dialogueTypewriter;
+
+    [Header("Initial Facing Direction")]
+    public bool facingRightOnStart = true;
+
+    void Start()
+    {
+        isFacingRight = facingRightOnStart;
+        Vector3 localScale = transform.localScale;
+        if (!isFacingRight)
+        {
+            localScale.x = Mathf.Abs(localScale.x) * -1f;
+        }
+        else
+        {
+            localScale.x = Mathf.Abs(localScale.x);
+        }
+        transform.localScale = localScale;
+    }
 
     void Update()
     {
+        if (dialogueTypewriter.dialogueActive)
+        {
+            rb.velocity = new Vector2(0f, rb.velocity.y); // Freeze horizontal movement
+            Animation.SetFloat("Speed", 0);
+            return;
+        }
+
         horizontal = 0f;
 
         if (Input.GetKey(leftKey))
@@ -43,11 +68,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
-       
-        Animation.SetFloat("Speed", Mathf.Abs(horizontal));     
+
+        Animation.SetFloat("Speed", Mathf.Abs(horizontal));
         Animation.SetFloat("VerticalVelocity", rb.velocity.y);
-        Debug.Log($"Vertical: {rb.velocity.y}");
     }
+
 
     private void FixedUpdate()
     {
