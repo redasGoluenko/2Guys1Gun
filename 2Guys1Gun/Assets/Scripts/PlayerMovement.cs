@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private float speed = 8.0f;
     private float jumpingPower = 16.0f;
-    private bool isFacingRight = true;
-    private float horizontal;
+    private bool isFacingRight = true;  
+    private float horizontal;   
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode leftKey = KeyCode.A;
     [SerializeField] private KeyCode rightKey = KeyCode.D;
+
+    public Animator Animation;
 
     void Update()
     {
@@ -41,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Flip();
+       
+        Animation.SetFloat("Speed", Mathf.Abs(horizontal));     
+        Animation.SetFloat("VerticalVelocity", rb.velocity.y);
+        Debug.Log($"Vertical: {rb.velocity.y}");
     }
 
     private void FixedUpdate()
