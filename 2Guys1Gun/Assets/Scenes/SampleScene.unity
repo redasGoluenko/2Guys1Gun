@@ -4591,7 +4591,7 @@ MonoBehaviour:
   pauseBetweenLines: 2
   initialDelay: 3
   dramaticPause: 0.6
-  dialogueActive: 1
+  dialogueActive: 0
 --- !u!4 &1484114245
 Transform:
   m_ObjectHideFlags: 0
