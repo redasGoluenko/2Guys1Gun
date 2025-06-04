@@ -22,8 +22,22 @@ public class PlayerMovement : MonoBehaviour
     [Header("Initial Facing Direction")]
     public bool facingRightOnStart = true;
 
+    [Header("Player Side")]
+    public bool isLeftPlayer = true;
+
     void Start()
     {
+        // Initialize default keys if not already set
+        if (!PlayerPrefs.HasKey("L_Jump") || !PlayerPrefs.HasKey("R_Jump"))
+        {
+            InputFieldKeyBinder.ResetAllKeysToDefault();
+        }
+
+        // Assign saved keys
+        jumpKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Jump");
+        leftKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Left");
+        rightKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Right");
+
         isFacingRight = facingRightOnStart;
         Vector3 localScale = transform.localScale;
         if (!isFacingRight)
@@ -72,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
         Animation.SetFloat("Speed", Mathf.Abs(horizontal));
         Animation.SetFloat("VerticalVelocity", rb.velocity.y);
     }
-
 
     private void FixedUpdate()
     {

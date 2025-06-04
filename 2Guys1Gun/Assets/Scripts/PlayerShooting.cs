@@ -10,9 +10,12 @@ public class PlayerShooting : MonoBehaviour
     private PlayerMovement playerMovement;
     public WeaponTransfer weaponTransfer;
 
+    public bool isLeftPlayer = true;
+
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        shootKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Attack");
     }
 
     void Update()
