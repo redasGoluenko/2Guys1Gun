@@ -1,39 +1,57 @@
 using UnityEngine;
 
-// Projectile script to handle the projectile's behavior and collision detection
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 public class Projectile : MonoBehaviour
 {
+    [Header("Projectile Settings")]
     public int damage = 25;
+    public float speed = 10f;
+    public float lifetime = 3f;
+    public LayerMask groundLayer;
+
     private Vector2 direction;
+    private Rigidbody2D rb;
+    private Collider2D col;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+        col.isTrigger = true; // Make collider a trigger
+        Destroy(gameObject, lifetime);
+    }
 
     public void SetDirection(Vector2 dir)
     {
         direction = dir.normalized;
+        rb.velocity = direction * speed;
     }
 
-    void Update()
+    private void Update()
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb == null) return;
 
-        float distance = rb.velocity.magnitude * Time.deltaTime;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, LayerMask.GetMask("Ground"));
-        if (hit.collider != null)
-        {
-            Destroy(gameObject);
-        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Enemy"))
+        // Damage enemies
+        if (other.CompareTag("Enemy"))
         {
-            EnemyBase enemy = collision.GetComponent<EnemyBase>();
+            EnemyBase enemy = other.GetComponent<EnemyBase>();
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (((1 << collision.gameObject.layer) & groundLayer) != 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

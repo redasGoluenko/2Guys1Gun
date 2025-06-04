@@ -18,19 +18,28 @@ public class EnemyBase : MonoBehaviour
         currentHealth = maxHealth;
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-     
+
         if (targetPlayer == null)
         {
             Debug.LogWarning("No target player assigned to the enemy.");
         }
+
     }
-  
-    public void DealDamage(PlayerHealth playerHealth)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerProjectile"))
+        {
+            int damageAmount = other.GetComponent<Projectile>().damage;
+            TakeDamage(damageAmount);
+        }
+    }
+
+    public virtual void DealDamage(PlayerHealth playerHealth)
     {
         playerHealth.TakeDamage(damage);
     }
-  
-    public void TakeDamage(int damageAmount)
+
+    public virtual void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
         DarkenObject();
@@ -38,9 +47,10 @@ public class EnemyBase : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+
         }
     }
-   
+
     private void DarkenObject()
     {
         darknessLevel -= 0.2f;
