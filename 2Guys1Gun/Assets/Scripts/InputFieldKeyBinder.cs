@@ -17,6 +17,7 @@ public class InputFieldKeyBinder : MonoBehaviour, IPointerClickHandler
 
     private bool waitingForKey = false;
     private Coroutine flashRoutine;
+    private static InputFieldKeyBinder currentActiveBinder;
 
     private string prefsKey => $"{(isLeftPlayer ? "L" : "R")}_{GetActionName()}";
 
@@ -29,7 +30,7 @@ public class InputFieldKeyBinder : MonoBehaviour, IPointerClickHandler
             return;
         }
 
-        displayText.readOnly = true; // prevent manual typing
+        displayText.readOnly = true;
 
         KeyCode savedKey = GetSavedKey();
         displayText.text = savedKey.ToString();
@@ -37,8 +38,14 @@ public class InputFieldKeyBinder : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (currentActiveBinder != null && currentActiveBinder != this)
+        {
+            currentActiveBinder.CancelBinding();
+        }
+
         if (!waitingForKey && displayText != null)
         {
+            currentActiveBinder = this;
             waitingForKey = true;
             displayText.text = "Press key...";
             flashRoutine = StartCoroutine(FlashText());
@@ -69,6 +76,8 @@ public class InputFieldKeyBinder : MonoBehaviour, IPointerClickHandler
             }
 
             waitingForKey = false;
+            if (currentActiveBinder == this)
+                currentActiveBinder = null;
         }
     }
 
@@ -78,7 +87,6 @@ public class InputFieldKeyBinder : MonoBehaviour, IPointerClickHandler
             StopCoroutine(flashRoutine);
         if (displayText != null)
             displayText.textComponent.color = Color.white;
-
     }
 
     IEnumerator FlashText()
@@ -94,6 +102,14 @@ public class InputFieldKeyBinder : MonoBehaviour, IPointerClickHandler
     IEnumerator RevertAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        if (displayText != null)
+            displayText.text = GetSavedKey().ToString();
+    }
+
+    public void CancelBinding()
+    {
+        waitingForKey = false;
+        StopFlashing();
         if (displayText != null)
             displayText.text = GetSavedKey().ToString();
     }
