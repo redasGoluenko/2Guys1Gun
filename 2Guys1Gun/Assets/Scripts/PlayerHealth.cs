@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     private bool isTakingLavaDamage = false;
 
     public GameObject gameOverUI;
+    public ShieldHandler ShieldHandler;
 
     private void Start()
     {
@@ -66,15 +67,18 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        UpdateColor();
-
-        if (currentHealth <= 0)
+        if (!ShieldHandler.isShieldActive)
         {
-            GameOver();
-        }
+            currentHealth -= damage;
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+            UpdateColor();
+
+            if (currentHealth <= 0)
+            {
+                GameOver();
+            }
+        }       
     }
 
     private void UpdateColor()
