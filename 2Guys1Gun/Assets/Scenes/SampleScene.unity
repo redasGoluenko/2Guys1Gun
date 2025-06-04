@@ -194,6 +194,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21393}
   m_CullTransparentMesh: 1
+--- !u!1001 &30849364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1371748535860618948, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: data.dataString
+      value: UEsDBBQAAAgIAAAQIezVo9YKWwIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VMFy2jAQ/RVG59KxKaGht5YQ0gMJE9rJxRfZWmMNsuSR5ADJ8O/dlW3s0MkJ8d7b3berld+Z1K6CzBu7slKsjQD2Y8TozL6MevIBjnxn9Fa+Qad5kcIXJOJB88y9NIjHFOZMCd7K7KfeKRJHCNZa5saWS7GDhXHeIZxz5QApazxFa4TeR+yIP+M5hZzwNPlOpzc8zaPRGY8ZaA+2l3bCTtaoap0pXlYgyHIvnt626riRaWymVZDxzCglXeuE+VMVOt1WBVigVoXk2FioHn2d3iBSgNwVnnwOw5/y3IFvTVl+upMWR9TkZb9MM7eSu33j7JWrmirNpsFUk3P9Hz2OA51bUz50ZeOISvhCZvtnfsq484O5DuG73noc5nPgas9TBS8F6EezsqbWAklvawqtHUzu+r+XzhYFZPseb6xegXX1+e1QD+fQ/HGhZJk2k2yArTJh4OHuweLV/EbDYTNcmwJRcvHXwR++G65QS9xL6zxSbZea7KWmtiRlyzAz6qb2C2M12GGGCjRX/rTBPP76Cq+4z6PuOb2WtnrLdY/gKiTAvT6KrqiNOVxuyxXmsAZXPNVeSQ39qIl4xEEtjNbNhrmPJEVta5vzbBC1q6X4uFositJJxHk6y9J49u12Op7ezObpPM9v4pxPcpGysHtSY5tcbRqf7XTw1nSfXOOedd+Q0cryKiy7sPywkm+lGY5c6txsMwugn5oUHeHAYhV8l2IpJA5oC95LHS6cvSdMmWwPIrnUTEKry6O3POmzJKySr8YTkrBF+GokjODLMm8svEo4UPEu2Zmd/wFQSwMEFAAACAgAABAh7HHQTp9tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKBQZKRQWJikllykqGZsYWJrompmWWSZVqaqWFaolFaSpJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABAh7NWj1gpbAgAAFAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABAh7HHQTp9tAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4998415851495686140, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6023174782473563016, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
+      propertyPath: m_Name
+      value: a_
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e1c527628fa65a44be119a5d2a1a1ce, type: 3}
 --- !u!1 &48692388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1117,7 @@ GameObject:
   - component: {fileID: 182118405}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Player1
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8221,3 +8282,4 @@ SceneRoots:
   - {fileID: 1989835834}
   - {fileID: 330305568}
   - {fileID: 1537491004}
+  - {fileID: 30849364}
