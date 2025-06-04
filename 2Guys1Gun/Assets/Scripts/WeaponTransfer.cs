@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Globalization;
 using UnityEngine;
 
 // WeaponTransfer script to handle the transfer of weapons between players
@@ -12,8 +13,14 @@ public class WeaponTransfer : MonoBehaviour
 
     private Coroutine activeTransferCoroutine;
 
+    public bool isLeftPlayer = true; // Indicates if this is the left player
+
     public bool IsWeaponInTransit => activeTransferCoroutine != null;
 
+    void Start()
+    {
+        transferKey = InputFieldKeyBinder.GetSavedKey(!isLeftPlayer, "Switch");
+    }
     void Update()
     {       
         if (Input.GetKeyDown(transferKey) && transferableObject != null)
