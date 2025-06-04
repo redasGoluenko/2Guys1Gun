@@ -2,39 +2,57 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemy;  // Reference to the enemy prefab
-    public float spawnInterval = 10f;  // Interval between spawns
-    public string targetString;  // Public variable to specify the target string in the inspector
-    public DialogueTypewriter DialogueTypewriter;  // Reference to the DialogueTypewriter script
+    [Header("Enemy Settings")]
+    public GameObject enemy;               // Enemy prefab
+    public float spawnInterval = 10f;      // Time between spawns
+    public GameObject target;              // Player target GameObject
+
+    [Header("Override Stats (EnemyBase only)")]
+    public float health = 100f;
+    public float speed = 2f;
+    public int damage = 10;
+
+    [Header("Dialogue Dependency")]
+    public DialogueTypewriter DialogueTypewriter;
 
     private bool hasStartedSpawning = false;
 
     void Update()
     {
-        // Check if the dialogue is not active and the spawning hasn't started yet
         if (!DialogueTypewriter.dialogueActive && !hasStartedSpawning)
         {
-            InvokeRepeating("SpawnEnemy", 0f, spawnInterval);
+            InvokeRepeating(nameof(SpawnEnemy), 0f, spawnInterval);
             hasStartedSpawning = true;
         }
     }
 
     void SpawnEnemy()
     {
-        // Instantiate the enemy at the spawner's position
-        GameObject spawnedEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-
-        // Access the Enemy script attached to the spawned enemy
-        Enemy2 enemyScript = spawnedEnemy.GetComponent<Enemy2>();
-
-        if (enemyScript != null)
+        if (enemy == null)
         {
-            // Set the target string to the value specified in the Inspector
-            enemyScript.target = targetString;
+            Debug.LogWarning("Enemy prefab not assigned.");
+            return;
         }
-        else
+
+        GameObject spawned = Instantiate(enemy, transform.position, Quaternion.identity);
+
+        EnemyBase baseScript = spawned.GetComponent<EnemyBase>();
+        if (baseScript != null)
         {
-            Debug.LogWarning("Enemy script not found on spawned enemy.");
+            baseScript.maxHealth = health;
+            baseScript.moveSpeed = speed;
+            baseScript.damage = damage;
+            baseScript.targetPlayer = target;
+            return;
         }
+
+        Enemy2 enemy2 = spawned.GetComponent<Enemy2>();
+        if (enemy2 != null)
+        {
+            enemy2.player = target;
+            return;
+        }
+
+        Debug.LogWarning("Spawned enemy does not match any known type.");
     }
 }

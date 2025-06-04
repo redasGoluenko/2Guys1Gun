@@ -14,26 +14,20 @@ public class SpawnerDestroy : MonoBehaviour
     public int maxShots = 10;
 
     // This is called when a collision with another object occurs
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the object colliding has the "PlayerProjectile" tag
-        if (collision.gameObject.CompareTag("PlayerProjectile"))
+        if (other.CompareTag("PlayerProjectile"))
         {
-            // Increment shot count
             shotCount++;
 
-            // If the object has been hit the maximum number of times
             if (shotCount >= maxShots)
             {
-                // Destroy the assigned object
                 if (objectToDestroy != null)
-                {
                     Destroy(objectToDestroy);
-                }
 
-                // Destroy the spawner object itself
                 Destroy(gameObject);
             }
         }
     }
+
 }

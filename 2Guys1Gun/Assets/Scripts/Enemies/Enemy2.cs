@@ -3,17 +3,13 @@ using UnityEngine;
 // Enemy2 script to handle the enemy's movement and collision detection in 2D
 public class Enemy2 : MonoBehaviour
 {
-    private GameObject player;
-    
+    public GameObject player;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float destroyRange = 1f;
-    public string target = "Player1";
-
     private PlayerHealth playerHealth;
 
     public void Start()
     {
-        player = GameObject.FindGameObjectWithTag(target);
         playerHealth = player.GetComponent<PlayerHealth>();
         if (player == null)
         {
