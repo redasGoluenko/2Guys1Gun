@@ -4,6 +4,7 @@ using UnityEngine;
 public class Enemy2 : MonoBehaviour
 {
     private GameObject player;
+    
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float destroyRange = 1f;
     public string target = "Player1";

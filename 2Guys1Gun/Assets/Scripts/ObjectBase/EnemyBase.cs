@@ -6,8 +6,7 @@ public class EnemyBase : MonoBehaviour
     public float maxHealth = 100f;
     public float moveSpeed = 2f;
     public int damage = 10;
-    public Transform targetPlayer;
-
+    public GameObject targetPlayer;
     protected float currentHealth;
     protected SpriteRenderer spriteRenderer;
     private Color originalColor;
@@ -72,7 +71,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (targetPlayer != null)
         {
-            Vector2 direction = (targetPlayer.position - transform.position).normalized;
+            Vector2 direction = (targetPlayer.transform.position - transform.position).normalized;
             transform.Translate(direction * moveSpeed * Time.deltaTime);
         }
     }

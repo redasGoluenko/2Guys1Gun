@@ -48,10 +48,9 @@ public class Enemy1 : EnemyBase
 
     void IgnorePlayerCollision()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player)
+        if (targetPlayer)
         {
-            Collider2D playerCol = player.GetComponent<Collider2D>();
+            Collider2D playerCol = targetPlayer.GetComponent<Collider2D>();
             if (playerCol)
             {
                 Physics2D.IgnoreCollision(col, playerCol, true);
@@ -61,9 +60,9 @@ public class Enemy1 : EnemyBase
 
     void UpdatePath()
     {
-        if (targetPlayer && seeker.IsDone() && Vector2.Distance(transform.position, targetPlayer.position) <= chaseDistance)
+        if (targetPlayer && seeker.IsDone() && Vector2.Distance(transform.position, targetPlayer.transform.position) <= chaseDistance)
         {
-            seeker.StartPath(rb.position, targetPlayer.position, OnPathComplete);
+            seeker.StartPath(rb.position, targetPlayer.transform.position, OnPathComplete);
         }
     }
 
@@ -82,7 +81,7 @@ public class Enemy1 : EnemyBase
         if (path == null || targetPlayer == null) return;
 
         // Only check for stuck if within chase range
-        if (Vector2.Distance(transform.position, targetPlayer.position) <= chaseDistance)
+        if (Vector2.Distance(transform.position, targetPlayer.transform.position) <= chaseDistance)
         {
             float xMoved = Mathf.Abs(rb.position.x - lastXPosition);
 
@@ -142,8 +141,8 @@ public class Enemy1 : EnemyBase
         // ✅ Handle case where enemy is directly above player and might be stuck
         if (targetPlayer != null)
         {
-            float xDiff = Mathf.Abs(targetPlayer.position.x - rb.position.x);
-            float yDiff = rb.position.y - targetPlayer.position.y;
+            float xDiff = Mathf.Abs(targetPlayer.transform.position.x - rb.position.x);
+            float yDiff = rb.position.y - targetPlayer.transform.position.y;
 
             if (xDiff < 0.5f && yDiff > 0.5f) // close X, player clearly below
             {
