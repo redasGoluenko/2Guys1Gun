@@ -1,18 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class ItemShopHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject itemShopObject;
+
+    private void Start()
     {
-        
+        if (itemShopObject != null)
+        {
+            itemShopObject.SetActive(false); // Ensure it's off at start
+            StartCoroutine(CheckForSpawners());
+        }
+        else
+        {
+            Debug.LogWarning("ItemShopActivator: No item shop object assigned.");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CheckForSpawners()
     {
-        
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+
+            if (spawners.Length == 0)
+            {
+                itemShopObject.SetActive(true);
+                Debug.Log("Item shop enabled: no spawners found.");
+                yield break;
+            }
+        }
     }
 }

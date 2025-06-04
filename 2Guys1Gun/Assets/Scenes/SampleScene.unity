@@ -2991,7 +2991,7 @@ GameObject:
   - component: {fileID: 865682848}
   m_Layer: 0
   m_Name: EnemySpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3009,7 +3009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2740559609066911929, guid: a6f2dfad83e0b5a44b17aa4377ec0faf, type: 3}
-  spawnInterval: 5
+  spawnInterval: 100
   targetString: Player1
   DialogueTypewriter: {fileID: 1484114244}
 --- !u!4 &865682849
@@ -5837,6 +5837,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2c21cbd7332044985525681566fd79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1537491002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537491004}
+  - component: {fileID: 1537491003}
+  m_Layer: 0
+  m_Name: ItemShopHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1537491003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537491002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db237855780bc7d46a83f7d43813f53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemShopObject: {fileID: 92641622}
+--- !u!4 &1537491004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537491002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.0592241, y: -5.5713816, z: -0.14154336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565264432
 GameObject:
   m_ObjectHideFlags: 0
@@ -6224,7 +6269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbc6c65400ec0849aeb7b876630e78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterSeconds: 60
+  destroyAfterSeconds: 10
 --- !u!61 &1631421068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7718,7 +7763,7 @@ GameObject:
   - component: {fileID: 1989835833}
   m_Layer: 0
   m_Name: EnemySpawner (1)
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7736,7 +7781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2740559609066911929, guid: a6f2dfad83e0b5a44b17aa4377ec0faf, type: 3}
-  spawnInterval: 10
+  spawnInterval: 100
   targetString: Player2
   DialogueTypewriter: {fileID: 1484114244}
 --- !u!4 &1989835834
@@ -7962,7 +8007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbc6c65400ec0849aeb7b876630e78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterSeconds: 60
+  destroyAfterSeconds: 10
 --- !u!61 &2062786291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8175,3 +8220,4 @@ SceneRoots:
   - {fileID: 865682849}
   - {fileID: 1989835834}
   - {fileID: 330305568}
+  - {fileID: 1537491004}
