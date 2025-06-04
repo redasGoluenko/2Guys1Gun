@@ -3179,7 +3179,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2740559609066911929, guid: a6f2dfad83e0b5a44b17aa4377ec0faf, type: 3}
   spawnInterval: 100
-  targetString: Player1
+  target: {fileID: 182118396}
+  health: 100
+  speed: 2
+  damage: 10
   DialogueTypewriter: {fileID: 1484114244}
 --- !u!4 &865682849
 Transform:
@@ -8059,7 +8062,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2740559609066911929, guid: a6f2dfad83e0b5a44b17aa4377ec0faf, type: 3}
   spawnInterval: 100
-  targetString: Player2
+  target: {fileID: 1315366515}
+  health: 100
+  speed: 2
+  damage: 10
   DialogueTypewriter: {fileID: 1484114244}
 --- !u!4 &1989835834
 Transform:
