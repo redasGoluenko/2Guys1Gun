@@ -54,16 +54,4 @@ public class Enemy2 : MonoBehaviour
             Debug.Log("Enemy hit by projectile and destroyed!");
         }
     }
-    void OnDestroy()
-    {      
-            GameObject soulCounterObject = GameObject.FindGameObjectWithTag("SoulCounter");
-            if (soulCounterObject != null)
-            {
-                SoulCounterHandler counter = soulCounterObject.GetComponent<SoulCounterHandler>();
-                if (counter != null)
-                {
-                    counter.UpdateSoulCounter();
-                }
-            }      
-    }
 }
