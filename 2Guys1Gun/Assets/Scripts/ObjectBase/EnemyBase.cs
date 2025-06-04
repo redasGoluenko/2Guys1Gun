@@ -46,6 +46,16 @@ public class EnemyBase : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Debug.Log("Enemy destroyed!!!!!!");
+            GameObject soulCounterObject = GameObject.FindGameObjectWithTag("SoulCounter");
+            if (soulCounterObject != null)
+            {
+                SoulCounterHandler counter = soulCounterObject.GetComponent<SoulCounterHandler>();
+                if (counter != null)
+                {
+                    counter.UpdateSoulCounter();
+                }
+            }
             Destroy(gameObject);
 
         }

@@ -11,6 +11,8 @@ TagManager:
   - Player1
   - Player2
   - Player
+  - SoulCounter
+  - Spawner
   layers:
   - Default
   - TransparentFX
