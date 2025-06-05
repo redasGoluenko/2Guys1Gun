@@ -9,7 +9,7 @@ public class SoulCounterHandler : MonoBehaviour
     public Image Background;
     public Image SoulIcon;
 
-    private int souls = 0;
+    public int souls = 0;
 
     private Color originalTextColor;
     private Color flashTextColor = Color.red;
@@ -39,6 +39,11 @@ public class SoulCounterHandler : MonoBehaviour
         souls++;
         soulCounterText.text = souls.ToString();
 
+        StartCoroutine(SmoothFlashEffect());
+    }
+    public void RefreshSoulCounter()
+    {
+        soulCounterText.text = souls.ToString();
         StartCoroutine(SmoothFlashEffect());
     }
 
