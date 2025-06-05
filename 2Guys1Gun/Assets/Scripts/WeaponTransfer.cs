@@ -10,6 +10,7 @@ public class WeaponTransfer : MonoBehaviour
     [SerializeField] private KeyCode transferKey = KeyCode.T;
     public bool hasBall = false;
     public WeaponTransfer otherPlayer;
+    Renderer weaponRenderer;
 
     private Coroutine activeTransferCoroutine;
 
@@ -19,10 +20,12 @@ public class WeaponTransfer : MonoBehaviour
 
     void Start()
     {
+        weaponRenderer = transferableObject.GetComponent<Renderer>();
+        weaponRenderer.enabled = false; // Hide the weapon initially
         transferKey = InputFieldKeyBinder.GetSavedKey(!isLeftPlayer, "Switch");
     }
     void Update()
-    {       
+    {      
         if (Input.GetKeyDown(transferKey) && transferableObject != null)
         {          
             if (activeTransferCoroutine != null)
@@ -41,6 +44,7 @@ public class WeaponTransfer : MonoBehaviour
 
     private IEnumerator TransferObject()
     {
+        weaponRenderer.enabled = true; // Ensure the weapon is visible during transfer
         Debug.Log($"{gameObject.name}: Transfer started, weapon in transit");    
         Vector3 startPos = transferableObject.transform.position;
         float elapsedTime = 0f;
@@ -52,7 +56,8 @@ public class WeaponTransfer : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-       
+        weaponRenderer.enabled = false; // Hide the weapon after transfer
+
         transferableObject.transform.position = transform.position;
         transferableObject.transform.SetParent(transform);
         
