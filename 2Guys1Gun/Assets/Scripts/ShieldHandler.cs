@@ -33,7 +33,7 @@ public class ShieldHandler : MonoBehaviour
 
     void Start()
     {
-        activationKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Down");
+        activationKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Attack");
         originalScale = transform.localScale;
         transform.localScale = hiddenScale;
 
