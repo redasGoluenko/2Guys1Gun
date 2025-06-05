@@ -16,6 +16,9 @@ public class PlayerShooting : MonoBehaviour
     private float shotgunCooldown = 1.0f;
     private float shotgunTimer = 0f;
 
+    private float blastCooldown = 1.5f;
+    private float blastTimer = 0f;
+
     private float autoFireRate = 0.075f;
     private float autoFireTimer = 0f;
 
@@ -29,6 +32,7 @@ public class PlayerShooting : MonoBehaviour
     {
         shotgunTimer -= Time.deltaTime;
         autoFireTimer -= Time.deltaTime;
+        blastTimer -= Time.deltaTime;
 
         if (weaponTransfer == null || !weaponTransfer.hasBall || weaponTransfer.IsWeaponInTransit)
             return;
@@ -57,8 +61,16 @@ public class PlayerShooting : MonoBehaviour
             case "Button3":
                 if (Input.GetKey(shootKey) && autoFireTimer <= 0f)
                 {
-                    ShootStandard(); // Reuse standard bullet
+                    ShootStandard();
                     autoFireTimer = autoFireRate;
+                }
+                break;
+
+            case "Button4":
+                if (Input.GetKeyDown(shootKey) && blastTimer <= 0f)
+                {
+                    ShootBlast();
+                    blastTimer = blastCooldown;
                 }
                 break;
 
@@ -116,5 +128,28 @@ public class PlayerShooting : MonoBehaviour
         }
 
         Debug.Log("Shotgun fired!");
+    }
+
+    private void ShootBlast()
+    {
+        if (shootableObject == null) return;
+
+        Vector2 direction = playerMovement.IsFacingRight() ? Vector2.right : Vector2.left;
+        Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f);
+
+        GameObject blastProjectile = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
+
+        blastProjectile.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+
+        CircleCollider2D collider = blastProjectile.GetComponent<CircleCollider2D>();
+        if (collider != null) collider.radius *= 0.25f;
+
+        Rigidbody2D rb = blastProjectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+            rb.AddForce(direction * shootForce * 0.5f, ForceMode2D.Impulse); // slower speed, half force
+
+        Destroy(blastProjectile, 2f);
+
+        Debug.Log("Blast projectile fired!");
     }
 }
