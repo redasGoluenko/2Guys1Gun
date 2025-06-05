@@ -13,8 +13,11 @@ public class PlayerShooting : MonoBehaviour
 
     public bool isLeftPlayer = true;
 
-    private float cooldownTimer = 0f;
-    private float shotgunCooldown = 1.0f; // Cooldown in seconds for shotgun
+    private float shotgunCooldown = 1.0f;
+    private float shotgunTimer = 0f;
+
+    private float autoFireRate = 0.075f;
+    private float autoFireTimer = 0f;
 
     private void Start()
     {
@@ -24,48 +27,44 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
-        cooldownTimer -= Time.deltaTime;
+        shotgunTimer -= Time.deltaTime;
+        autoFireTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(shootKey))
-        {
-            if (weaponTransfer != null && weaponTransfer.hasBall && !weaponTransfer.IsWeaponInTransit)
-            {
-                HandleShooting();
-            }
-        }
-    }
-
-    private void HandleShooting()
-    {
-        if (itemShopHandler == null || itemShopHandler.lastPressedSlotButton == null)
-        {
-            ShootStandard();
+        if (weaponTransfer == null || !weaponTransfer.hasBall || weaponTransfer.IsWeaponInTransit)
             return;
-        }
 
-        string buttonName = itemShopHandler.lastPressedSlotButton.name;
-        Debug.Log($"Last pressed button: {buttonName}");
+        string buttonName = itemShopHandler?.lastPressedSlotButton?.name ?? "Button1";
 
         switch (buttonName)
         {
             case "Button1":
-                ShootStandard();
+                if (Input.GetKeyDown(shootKey))
+                    ShootStandard();
                 break;
 
             case "Button2":
-                if (cooldownTimer <= 0f)
+                if (Input.GetKeyDown(shootKey) && shotgunTimer <= 0f)
                 {
                     ShootShotgun();
-                    cooldownTimer = shotgunCooldown;
+                    shotgunTimer = shotgunCooldown;
                 }
-                else
+                else if (Input.GetKeyDown(shootKey))
                 {
                     Debug.Log("Shotgun is on cooldown!");
                 }
                 break;
 
+            case "Button3":
+                if (Input.GetKey(shootKey) && autoFireTimer <= 0f)
+                {
+                    ShootStandard(); // Reuse standard bullet
+                    autoFireTimer = autoFireRate;
+                }
+                break;
+
             default:
-                ShootStandard();
+                if (Input.GetKeyDown(shootKey))
+                    ShootStandard();
                 break;
         }
     }
@@ -96,7 +95,6 @@ public class PlayerShooting : MonoBehaviour
         int pelletCount = 5;
         float spreadAngle = 20f;
         float baseAngle = playerMovement.IsFacingRight() ? 0f : 180f;
-
         Vector3 spawnPosition = transform.position + (Vector3)((playerMovement.IsFacingRight() ? Vector2.right : Vector2.left) * 0.25f);
 
         for (int i = 0; i < pelletCount; i++)
