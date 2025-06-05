@@ -29,11 +29,17 @@ public class ShieldHandler : MonoBehaviour
     private float cooldownTimer = 0f;
     public bool isShieldActive = false;
 
+    private Renderer shieldRenderer;
+
     void Start()
     {
         activationKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Down");
         originalScale = transform.localScale;
         transform.localScale = hiddenScale;
+
+        shieldRenderer = GetComponent<Renderer>();
+        if (shieldRenderer != null)
+            shieldRenderer.enabled = false;
     }
 
     void Update()
@@ -54,6 +60,9 @@ public class ShieldHandler : MonoBehaviour
         {
             if (!PlayerHasWeapon())
             {
+                if (shieldRenderer != null)
+                    shieldRenderer.enabled = true;
+
                 isScalingUp = true;
                 isOnCooldown = true;
                 shieldTimer = 0f;
@@ -79,7 +88,6 @@ public class ShieldHandler : MonoBehaviour
         // Shield active countdown
         if (isShieldActive && !isScalingUp && !isScalingDown)
         {
-            // Auto retract if weapon appears
             if (PlayerHasWeapon())
             {
                 Debug.Log("Shield retracted: Weapon equipped during shield.");
@@ -105,6 +113,9 @@ public class ShieldHandler : MonoBehaviour
             {
                 transform.localScale = hiddenScale;
                 isScalingDown = false;
+
+                if (shieldRenderer != null)
+                    shieldRenderer.enabled = false;
             }
         }
     }
