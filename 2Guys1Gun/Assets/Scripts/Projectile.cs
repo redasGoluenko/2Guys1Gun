@@ -45,6 +45,10 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if(other.CompareTag("OuterWall"))
+        {
+           Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -9,7 +9,7 @@ public class ItemShopHandler : MonoBehaviour
     public Button slot1;
     public Button slot2;
     public Button slot3;
-    public Button slot4;  
+    public Button slot4;
     public Button slot6;
     public Button slot7;
     public Button slot8;
@@ -30,13 +30,13 @@ public class ItemShopHandler : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("ItemShopActivator: No item shop object assigned.");
+            Debug.LogWarning("ItemShopHandler: No item shop object assigned.");
         }
 
         RegisterButton(slot1);
         RegisterButton(slot2);
         RegisterButton(slot3);
-        RegisterButton(slot4);    
+        RegisterButton(slot4);
         RegisterButton(slot6);
         RegisterButton(slot7);
         RegisterButton(slot8);
@@ -53,33 +53,12 @@ public class ItemShopHandler : MonoBehaviour
     }
 
     private void OnSlotButtonPressed(Button button)
-    {       
-        lastPressedSlotButton = button;
-        Debug.Log($"Button {button.name} was pressed.");
-    }
-
-    private void Update()
     {
-        // Toggle item shop visibility with Numpad+
-        if (Input.GetKeyDown(KeyCode.KeypadMinus))
-        {
-            if (itemShopObject != null)
-            {
-                bool isActive = itemShopObject.activeSelf;
-                itemShopObject.SetActive(!isActive);
-
-                // Optionally stop the coroutine if manually toggled on
-                if (!isActive && spawnerCheckCoroutine != null)
-                {
-                    StopCoroutine(spawnerCheckCoroutine);
-                    spawnerCheckCoroutine = null;
-                    Debug.Log("Spawner check coroutine stopped due to manual toggle.");
-                }
-
-                Debug.Log($"Item shop toggled to {(itemShopObject.activeSelf ? "ON" : "OFF")} with Numpad+.");
-            }
-        }
+        lastPressedSlotButton = button;
+        // Debug log can be removed if no longer needed
     }
+
+    // Update removed completely as Numpad toggle is no longer required
 
     IEnumerator CheckForSpawners()
     {

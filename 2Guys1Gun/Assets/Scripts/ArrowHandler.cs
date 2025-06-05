@@ -63,7 +63,7 @@ public class ArrowSelector : MonoBehaviour
         switch (selectedArrow)
         {
             case 0:
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Level1");
                 break;
             case 1:
                 SceneManager.LoadScene("Settings");
