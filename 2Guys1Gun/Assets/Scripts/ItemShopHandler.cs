@@ -9,8 +9,7 @@ public class ItemShopHandler : MonoBehaviour
     public Button slot1;
     public Button slot2;
     public Button slot3;
-    public Button slot4;
-    public Button slot5;
+    public Button slot4;  
     public Button slot6;
     public Button slot7;
     public Button slot8;
@@ -37,8 +36,7 @@ public class ItemShopHandler : MonoBehaviour
         RegisterButton(slot1);
         RegisterButton(slot2);
         RegisterButton(slot3);
-        RegisterButton(slot4);
-        RegisterButton(slot5);
+        RegisterButton(slot4);    
         RegisterButton(slot6);
         RegisterButton(slot7);
         RegisterButton(slot8);
@@ -55,7 +53,7 @@ public class ItemShopHandler : MonoBehaviour
     }
 
     private void OnSlotButtonPressed(Button button)
-    {
+    {       
         lastPressedSlotButton = button;
         Debug.Log($"Button {button.name} was pressed.");
     }
