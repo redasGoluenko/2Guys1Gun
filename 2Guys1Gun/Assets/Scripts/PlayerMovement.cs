@@ -1,4 +1,5 @@
 using System.Collections;
+using Pathfinding.Ionic.Zip;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode leftKey = KeyCode.A;
     [SerializeField] private KeyCode rightKey = KeyCode.D;
-
+    [SerializeField] private KeyCode switchKey;
     public Animator Animation;
     public DialogueTypewriter dialogueTypewriter;
     public ShieldHandler shieldHandler;
@@ -25,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Player Side")]
     public bool isLeftPlayer = true;
-
+    private ItemShopHandler itemShopHandler;
+    private WeaponTransfer wt;
     void Start()
     {
         // Initialize default keys if not already set
@@ -33,7 +35,12 @@ public class PlayerMovement : MonoBehaviour
         {
             InputFieldKeyBinder.ResetAllKeysToDefault();
         }
-
+        PlayerShooting shootingScript = GetComponent<PlayerShooting>();
+        if (shootingScript != null)
+        {
+            itemShopHandler = shootingScript.itemShopHandler;
+            wt = shootingScript.weaponTransfer;
+        }
         // Assign saved keys
         jumpKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Jump");
         leftKey = InputFieldKeyBinder.GetSavedKey(isLeftPlayer, "Left");
@@ -54,40 +61,36 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (shieldHandler.isShieldActive)
+        // Skip slot selection if weapon is transferring
+        if (!wt.IsWeaponInTransit && wt.hasBall && itemShopHandler.lastPressedSlotButton != null)
         {
-            //increase speed
-            speed = 12.0f;
+            SetActiveSlot(itemShopHandler.lastPressedSlotButton.name);
         }
         else
         {
-            //reset speed
-            speed = 8.0f;
+            ResetAllSlots();
+            Animation.SetFloat("Speed", 0);
         }
+
+        // Speed boost from shield
+        speed = shieldHandler.isShieldActive ? 12.0f : 8.0f;
+
         if (dialogueTypewriter.dialogueActive)
         {
-            rb.velocity = new Vector2(0f, rb.velocity.y); // Freeze horizontal movement
-            Animation.SetFloat("Speed", 0);
+            rb.velocity = new Vector2(0f, rb.velocity.y);
             return;
         }
 
         horizontal = 0f;
+        if (Input.GetKey(leftKey)) horizontal = -1f;
+        else if (Input.GetKey(rightKey)) horizontal = 1f;
 
-        if (Input.GetKey(leftKey))
-        {
-            horizontal = -1f;
-        }
-        else if (Input.GetKey(rightKey))
-        {
-            horizontal = 1f;
-        }
-
+        // Jump
         if (Input.GetKeyDown(jumpKey) && isGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-
-        if (Input.GetKeyUp(jumpKey) && rb.velocity.y > 0f)
+        else if (Input.GetKeyUp(jumpKey) && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
@@ -97,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
         Animation.SetFloat("Speed", Mathf.Abs(horizontal));
         Animation.SetFloat("VerticalVelocity", rb.velocity.y);
     }
+
 
     private void FixedUpdate()
     {
@@ -123,4 +127,35 @@ public class PlayerMovement : MonoBehaviour
     {
         return isFacingRight;
     }
+    private void SetActiveSlot(string slotName)
+    {
+        ResetAllSlots();
+
+        switch (slotName)
+        {
+            case "Button1":
+                Animation.SetBool("Slot1", true);
+                break;
+            case "Button2":
+                Animation.SetBool("Slot2", true);
+                break;
+            case "Button3":
+                Animation.SetBool("Slot3", true);
+                break;
+            case "Button4":
+                Animation.SetBool("Slot4", true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void ResetAllSlots()
+    {
+        Animation.SetBool("Slot1", false);
+        Animation.SetBool("Slot2", false);
+        Animation.SetBool("Slot3", false);
+        Animation.SetBool("Slot4", false);
+    }
+
 }
