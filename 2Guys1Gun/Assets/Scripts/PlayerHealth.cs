@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private Color originalColor;
 
     [SerializeField] public int maxHealth = 100;
-    [SerializeField] private int currentHealth;
+    [SerializeField] public int currentHealth;
     [SerializeField] public int lavaDamage = 0;
     [SerializeField] public float lavaDamageRate = 0.2f;
     private bool isTakingLavaDamage = false;
