@@ -23,6 +23,17 @@ public class SoulCounterHandler : MonoBehaviour
         originalScale = soulCounterText.transform.localScale;
     }
 
+    private void Update()
+    {
+        //add 100 souls if i press numpad9
+        if (Input.GetKeyDown(KeyCode.Keypad9))
+        {
+            souls += 100;
+            soulCounterText.text = souls.ToString();
+            StartCoroutine(SmoothFlashEffect());
+        }
+    }
+
     public void UpdateSoulCounter()
     {
         souls++;
