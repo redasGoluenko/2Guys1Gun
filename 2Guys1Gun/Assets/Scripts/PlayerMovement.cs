@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator Animation;
     public DialogueTypewriter dialogueTypewriter;
+    public ShieldHandler shieldHandler;
 
     [Header("Initial Facing Direction")]
     public bool facingRightOnStart = true;
@@ -53,6 +54,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (shieldHandler.isShieldActive)
+        {
+            //increase speed
+            speed = 12.0f;
+        }
+        else
+        {
+            //reset speed
+            speed = 8.0f;
+        }
         if (dialogueTypewriter.dialogueActive)
         {
             rb.velocity = new Vector2(0f, rb.velocity.y); // Freeze horizontal movement
