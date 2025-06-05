@@ -11,6 +11,8 @@ public class SoulCounterHandler : MonoBehaviour
 
     public int souls = 0;
 
+    private const string SoulKey = "PlayerSoulCount";
+
     private Color originalTextColor;
     private Color flashTextColor = Color.red;
 
@@ -18,29 +20,35 @@ public class SoulCounterHandler : MonoBehaviour
 
     void Start()
     {
-        soulCounterText.text = "0";
+        souls = PlayerPrefs.GetInt(SoulKey, 0); // Load saved soul count
+        soulCounterText.text = souls.ToString();
         originalTextColor = soulCounterText.color;
         originalScale = soulCounterText.transform.localScale;
     }
 
     private void Update()
     {
-        //add 100 souls if i press numpad9
+        // Add 100 souls with Numpad9 (for testing)
         if (Input.GetKeyDown(KeyCode.Keypad9))
         {
-            souls += 100;
-            soulCounterText.text = souls.ToString();
-            StartCoroutine(SmoothFlashEffect());
+            AddSouls(100);
         }
+    }
+
+    public void AddSouls(int amount)
+    {
+        souls += amount;
+        PlayerPrefs.SetInt(SoulKey, souls); // Save updated soul count
+        PlayerPrefs.Save();
+        soulCounterText.text = souls.ToString();
+        StartCoroutine(SmoothFlashEffect());
     }
 
     public void UpdateSoulCounter()
     {
-        souls++;
-        soulCounterText.text = souls.ToString();
-
-        StartCoroutine(SmoothFlashEffect());
+        AddSouls(1);
     }
+
     public void RefreshSoulCounter()
     {
         soulCounterText.text = souls.ToString();
@@ -52,11 +60,8 @@ public class SoulCounterHandler : MonoBehaviour
         float duration = 0.3f;
         float time = 0f;
 
-        // Get current scale to prevent stacking animation bugs
-        Vector3 currentScale = soulCounterText.transform.localScale;
         Vector3 targetScale = originalScale * 1.3f;
 
-        // Set color flash start
         Color startColor = flashTextColor;
 
         while (time < duration)
@@ -64,10 +69,8 @@ public class SoulCounterHandler : MonoBehaviour
             time += Time.deltaTime;
             float t = time / duration;
 
-            // Color lerp
             soulCounterText.color = Color.Lerp(startColor, originalTextColor, t);
 
-            // Scale lerp from current to original
             Vector3 lerpedScale = Vector3.Lerp(targetScale, originalScale, t);
             soulCounterText.transform.localScale = lerpedScale;
             Background.transform.localScale = lerpedScale;
@@ -76,7 +79,6 @@ public class SoulCounterHandler : MonoBehaviour
             yield return null;
         }
 
-        // Final correction
         soulCounterText.color = originalTextColor;
         soulCounterText.transform.localScale = originalScale;
         Background.transform.localScale = originalScale;

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ItemShopHandler : MonoBehaviour
 {
@@ -18,20 +19,14 @@ public class ItemShopHandler : MonoBehaviour
 
     public Button lastPressedSlotButton;
 
-    private Coroutine spawnerCheckCoroutine;
+    private Coroutine objectCheckCoroutine;
+    private const string LastPressedKey = "LastPressedSlotButtonName";
 
     private void Start()
     {
-        lastPressedSlotButton = slot1; // Default to slot1
-        if (itemShopObject != null)
-        {
-            itemShopObject.SetActive(false); // Ensure it's off at start
-            spawnerCheckCoroutine = StartCoroutine(CheckForSpawners());
-        }
-        else
-        {
-            Debug.LogWarning("ItemShopHandler: No item shop object assigned.");
-        }
+        // Delete PlayerPrefs key if needed
+        string savedButtonName = PlayerPrefs.GetString(LastPressedKey, "Button1");
+        lastPressedSlotButton = GetButtonByName(savedButtonName) ?? slot1;
 
         RegisterButton(slot1);
         RegisterButton(slot2);
@@ -42,6 +37,22 @@ public class ItemShopHandler : MonoBehaviour
         RegisterButton(slot8);
         RegisterButton(slot9);
         RegisterButton(slot10);
+
+        if (itemShopObject != null)
+        {
+            itemShopObject.SetActive(false);
+
+            string sceneName = SceneManager.GetActiveScene().name;
+
+            if (sceneName == "Level1")
+                objectCheckCoroutine = StartCoroutine(CheckForObjectsWithTag("Spawner"));
+            else if (sceneName == "Level2")
+                objectCheckCoroutine = StartCoroutine(CheckForObjectsWithTag("Obunga"));
+        }
+        else
+        {
+            Debug.LogWarning("ItemShopHandler: No item shop object assigned.");
+        }
     }
 
     private void RegisterButton(Button button)
@@ -55,25 +66,47 @@ public class ItemShopHandler : MonoBehaviour
     private void OnSlotButtonPressed(Button button)
     {
         lastPressedSlotButton = button;
-        // Debug log can be removed if no longer needed
+        PlayerPrefs.SetString(LastPressedKey, button.name);
+        PlayerPrefs.Save();
     }
 
-    // Update removed completely as Numpad toggle is no longer required
+    private Button GetButtonByName(string name)
+    {
+        switch (name)
+        {
+            case "Button1": return slot1;
+            case "Button2": return slot2;
+            case "Button3": return slot3;
+            case "Button4": return slot4;
+            case "Button6": return slot6;
+            case "Button7": return slot7;
+            case "Button8": return slot8;
+            case "Button9": return slot9;
+            case "Button10": return slot10;
+            default: return null;
+        }
+    }
 
-    IEnumerator CheckForSpawners()
+    IEnumerator CheckForObjectsWithTag(string tag)
     {
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
 
-            GameObject[] spawners = GameObject.FindGameObjectsWithTag("Spawner");
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
 
-            if (spawners.Length == 0)
+            if (objects.Length == 0)
             {
                 itemShopObject.SetActive(true);
-                Debug.Log("Item shop enabled: no spawners found.");
+                Debug.Log($"Item shop enabled: no '{tag}' objects found.");
                 yield break;
             }
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteKey(LastPressedKey);
+        PlayerPrefs.Save();
     }
 }

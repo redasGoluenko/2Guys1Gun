@@ -14,6 +14,11 @@ public class ArrowSelector : MonoBehaviour
         playArrow.SetActive(true);
         settingsArrow.SetActive(false);
         quitArrow.SetActive(false);
+
+        // Reset PlayerPrefs key so the game starts with default slot
+        PlayerPrefs.DeleteKey("LastPressedSlotButtonName");
+        PlayerPrefs.DeleteKey("PlayerSoulCount");
+        PlayerPrefs.Save(); // Optional but ensures the key is removed immediately
     }
 
     void Update()

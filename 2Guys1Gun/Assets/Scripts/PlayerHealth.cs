@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-// PlayerHealth script to manage the player's health, damage, and game over state
 public class PlayerHealth : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
@@ -16,19 +15,37 @@ public class PlayerHealth : MonoBehaviour
     public GameObject gameOverUI;
     public ShieldHandler ShieldHandler;
 
+    private const string HealthKey = "PlayerCurrentHealth";
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
-        currentHealth = maxHealth;
 
+        // Restore saved health if available, otherwise use max
+        if (PlayerPrefs.HasKey(HealthKey))
+        {
+            currentHealth = PlayerPrefs.GetInt(HealthKey);
+        }
+        else
+        {
+            currentHealth = maxHealth;
+        }
+
+        UpdateColor();
         Time.timeScale = 1;
+    }
+
+    private void OnApplicationQuit()
+    {
+        // Optional: clear saved health on quit
+        PlayerPrefs.DeleteKey(HealthKey);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
-        {       
+        {
             EnemyBase enemy = collision.GetComponent<EnemyBase>();
             if (enemy != null)
             {
@@ -73,12 +90,13 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
             UpdateColor();
+            PlayerPrefs.SetInt(HealthKey, currentHealth); // Save updated health
 
             if (currentHealth <= 0)
             {
                 GameOver();
             }
-        }       
+        }
     }
 
     private void UpdateColor()
@@ -97,11 +115,13 @@ public class PlayerHealth : MonoBehaviour
     }
 
     public void GameOver()
-    {            
+    {
         if (gameOverUI != null)
         {
             gameOverUI.SetActive(true);
         }
+
+        PlayerPrefs.DeleteKey(HealthKey); // Optional: reset health after game over
         Time.timeScale = 0;
     }
 }

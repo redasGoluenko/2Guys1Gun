@@ -46,12 +46,18 @@ public class LockHandler : MonoBehaviour
         if (soulCounterHandler.souls >= soulCost)
         {
             soulCounterHandler.souls -= soulCost;
-            soulCounterHandler.RefreshSoulCounter(); // Update the soul counter display
-            Destroy(gameObject);
+
+            // Save updated soul count
+            PlayerPrefs.SetInt("PlayerSoulCount", soulCounterHandler.souls);
+            PlayerPrefs.Save();
+
+            soulCounterHandler.RefreshSoulCounter(); // Update UI
+            Destroy(gameObject); // Unlock
         }
         else
         {
             Debug.Log("Not enough souls to unlock.");
         }
     }
+
 }
