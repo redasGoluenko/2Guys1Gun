@@ -1544,6 +1544,7 @@ MonoBehaviour:
   jumpKey: 119
   leftKey: 97
   rightKey: 100
+  switchKey: 0
   Animation: {fileID: 182118405}
   dialogueTypewriter: {fileID: 1484114244}
   shieldHandler: {fileID: 622515350}
@@ -1746,6 +1747,7 @@ MonoBehaviour:
   shootableObject: {fileID: 6742212955945826512, guid: 9be98dec6efd7814289cdcc178e3f297, type: 3}
   shootForce: 10
   shootKey: 306
+  verticalOffset: -0.2
   weaponTransfer: {fileID: 182118403}
   itemShopHandler: {fileID: 1537491003}
   magazine: {fileID: 541728002}
@@ -1967,8 +1969,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7579638063731571683, guid: e5d5c74edfe87704cb842bb77a67761a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4439,7 +4441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Semi-Auto
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4754,9 +4756,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Shotgun
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6712,7 +6712,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Full Auto
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7880,6 +7880,7 @@ MonoBehaviour:
   jumpKey: 273
   leftKey: 276
   rightKey: 275
+  switchKey: 0
   Animation: {fileID: 1315366524}
   dialogueTypewriter: {fileID: 1484114244}
   shieldHandler: {fileID: 1655812960}
@@ -8081,6 +8082,7 @@ MonoBehaviour:
   shootableObject: {fileID: 6742212955945826512, guid: 9be98dec6efd7814289cdcc178e3f297, type: 3}
   shootForce: 10
   shootKey: 270
+  verticalOffset: -0.2
   weaponTransfer: {fileID: 1315366522}
   itemShopHandler: {fileID: 1537491003}
   magazine: {fileID: 1734144438}
@@ -8796,7 +8798,6 @@ MonoBehaviour:
   slot2: {fileID: 1672119862}
   slot3: {fileID: 1771850563}
   slot4: {fileID: 260547389}
-  slot5: {fileID: 778089438}
   slot6: {fileID: 853147073}
   slot7: {fileID: 174135279}
   slot8: {fileID: 1965363947}
@@ -9564,15 +9565,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  m_Color: {r: 0.3207547, g: 0.31409755, b: 0.31409755, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -5252371272566491566, guid: 593ab325a773d3d45943d758558a1b40, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9791,15 +9792,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 8494724250274699039, guid: 6396b9e5ec42aa045bc965c06ede900e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10147,8 +10148,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 632148795882492629, guid: c3e477a6356001640ac153231c740fa0, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11090,7 +11091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Big Boy
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

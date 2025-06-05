@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject shootableObject;
     [SerializeField] private float shootForce = 10f;
     [SerializeField] private KeyCode shootKey = KeyCode.F;
+    [SerializeField] private float verticalOffset = 0f; // Bullet height offset
 
     private PlayerMovement playerMovement;
     public WeaponTransfer weaponTransfer;
@@ -25,13 +26,11 @@ public class PlayerShooting : MonoBehaviour
     private float autoFireRate = 0.075f;
     private float autoFireTimer = 0f;
 
-    // Magazine + Reloading
     private int maxAmmo = 15;
     private int currentAmmo;
     private bool isReloading = false;
     private KeyCode reloadKey;
 
-    // Auto-fire tracking
     private int autoShotsFired = 0;
 
     private void Start()
@@ -57,14 +56,12 @@ public class PlayerShooting : MonoBehaviour
 
         if (buttonName == "Button1")
         {
-            // Handle reloading
             if (Input.GetKeyDown(reloadKey) && !isReloading && currentAmmo < maxAmmo)
             {
                 StartCoroutine(Reload());
                 return;
             }
 
-            // Prevent shooting while reloading or out of ammo
             if (Input.GetKeyDown(shootKey) && !isReloading && currentAmmo > 0)
             {
                 ShootStandard();
@@ -77,7 +74,7 @@ public class PlayerShooting : MonoBehaviour
                 Debug.Log("Out of ammo! Press reload key.");
             }
 
-            return; // Exit early since we're handling everything in this block
+            return;
         }
 
         switch (buttonName)
@@ -178,7 +175,6 @@ public class PlayerShooting : MonoBehaviour
                 }
                 break;
 
-
             default:
                 if (Input.GetKeyDown(shootKey))
                     ShootStandard();
@@ -191,7 +187,7 @@ public class PlayerShooting : MonoBehaviour
         if (shootableObject == null) return;
 
         Vector2 direction = playerMovement.IsFacingRight() ? Vector2.right : Vector2.left;
-        Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f);
+        Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f) + new Vector3(0, verticalOffset, 0);
 
         GameObject copy = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
         copy.transform.localScale = new Vector3(0.125f, 0.125f, 0.125f);
@@ -212,7 +208,7 @@ public class PlayerShooting : MonoBehaviour
         int pelletCount = 5;
         float spreadAngle = 20f;
         float baseAngle = playerMovement.IsFacingRight() ? 0f : 180f;
-        Vector3 spawnPosition = transform.position + (Vector3)((playerMovement.IsFacingRight() ? Vector2.right : Vector2.left) * 0.25f);
+        Vector3 spawnPosition = transform.position + (Vector3)((playerMovement.IsFacingRight() ? Vector2.right : Vector2.left) * 0.25f) + new Vector3(0, verticalOffset, 0);
 
         for (int i = 0; i < pelletCount; i++)
         {
@@ -240,10 +236,9 @@ public class PlayerShooting : MonoBehaviour
         if (shootableObject == null) return;
 
         Vector2 direction = playerMovement.IsFacingRight() ? Vector2.right : Vector2.left;
-        Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f);
+        Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f) + new Vector3(0, verticalOffset, 0);
 
         GameObject blastProjectile = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
-
         blastProjectile.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
 
         CircleCollider2D collider = blastProjectile.GetComponent<CircleCollider2D>();
@@ -266,7 +261,7 @@ public class PlayerShooting : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         currentAmmo = maxAmmo;
-        autoShotsFired = 0; // Reset auto-fire tracking
+        autoShotsFired = 0;
         UpdateMagazineUI();
         isReloading = false;
         Debug.Log("Reload complete.");
