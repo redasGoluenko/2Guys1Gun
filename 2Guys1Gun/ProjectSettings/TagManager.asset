@@ -15,6 +15,7 @@ TagManager:
   - Spawner
   - Weapon
   - Obunga
+  - BossProjectile
   layers:
   - Default
   - TransparentFX
