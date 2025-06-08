@@ -1487,6 +1487,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  secondaryGroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   jumpKey: 119
   leftKey: 97
   rightKey: 100
@@ -6323,6 +6326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level1
+  resetPrefs: 1
 --- !u!1 &1043688895
 GameObject:
   m_ObjectHideFlags: 0
@@ -8055,6 +8059,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  secondaryGroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
   jumpKey: 273
   leftKey: 276
   rightKey: 275
@@ -8933,6 +8940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Level2
+  resetPrefs: 0
 --- !u!114 &1433622578
 MonoBehaviour:
   m_ObjectHideFlags: 0
