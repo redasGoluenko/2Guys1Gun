@@ -45,6 +45,12 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
+        if (!isReloading && currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         shotgunTimer -= Time.deltaTime;
         autoFireTimer -= Time.deltaTime;
         blastTimer -= Time.deltaTime;
@@ -179,7 +185,7 @@ public class PlayerShooting : MonoBehaviour
                 if (Input.GetKeyDown(shootKey))
                     ShootStandard();
                 break;
-        }
+        }        
     }
 
     private void ShootStandard()
