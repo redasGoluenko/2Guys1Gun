@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {      
         if (collision.CompareTag("Enemy"))
         {
             EnemyBase enemy = collision.GetComponent<EnemyBase>();
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
                 isTakingLavaDamage = true;
                 StartCoroutine(TakeLavaDamage());
             }
-        }
+        }     
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -48,6 +48,8 @@ public class ItemShopHandler : MonoBehaviour
                 objectCheckCoroutine = StartCoroutine(CheckForObjectsWithTag("Spawner"));
             else if (sceneName == "Level2")
                 objectCheckCoroutine = StartCoroutine(CheckForObjectsWithTag("Obunga"));
+            else if(sceneName == "Level3")
+                objectCheckCoroutine = StartCoroutine(CheckForObjectsWithTag("Boss"));
         }
         else
         {

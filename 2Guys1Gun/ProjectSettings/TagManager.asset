@@ -16,6 +16,7 @@ TagManager:
   - Weapon
   - Obunga
   - BossProjectile
+  - Boss
   layers:
   - Default
   - TransparentFX

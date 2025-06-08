@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulCost: 400
   lockText: {fileID: 2039859917}
-  purchaseAudio: {fileID: 0}
+  purchaseAudio: {fileID: 147305573}
 --- !u!114 &139889385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1887,8 +1887,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 51dcc3c4b4eb63e419d689b02ff7858c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 51dcc3c4b4eb63e419d689b02ff7858c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5109,7 +5109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulCost: 300
   lockText: {fileID: 1964282674}
-  purchaseAudio: {fileID: 0}
+  purchaseAudio: {fileID: 147305573}
 --- !u!114 &352582542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5355,7 +5355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &357000284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12505,7 +12505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulCost: 100
   lockText: {fileID: 368508483}
-  purchaseAudio: {fileID: 0}
+  purchaseAudio: {fileID: 147305573}
 --- !u!1 &970162180
 GameObject:
   m_ObjectHideFlags: 0
@@ -18349,9 +18349,11 @@ GameObject:
   - component: {fileID: 1368243551}
   - component: {fileID: 1368243550}
   - component: {fileID: 1368243549}
+  - component: {fileID: 1368243553}
+  - component: {fileID: 1368243552}
   m_Layer: 0
   m_Name: Final Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18378,7 +18380,7 @@ MonoBehaviour:
   vulnerableColor: {r: 1, g: 0, b: 0, a: 1}
   spawnPrefab: {fileID: 95372187165308855, guid: 233916ff312adb5499fe0eb309ddfbc4, type: 3}
   spawnInterval: 5
-  spawnOffset: {x: 0, y: 0}
+  spawnOffset: {x: 0, y: -0.5}
   projectileSpeed: 10
   projectileLifetime: 5
   leftPlatformsParent: {fileID: 454554385}
@@ -18455,6 +18457,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1368243552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368243548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc7ca3dec4cade40b3873136f09eed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitsToDestroy: 5
+--- !u!58 &1368243553
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368243548}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &1395841908
 GameObject:
   m_ObjectHideFlags: 0
@@ -27520,7 +27571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soulCost: 200
   lockText: {fileID: 1117235316}
-  purchaseAudio: {fileID: 0}
+  purchaseAudio: {fileID: 147305573}
 --- !u!114 &2116688767
 MonoBehaviour:
   m_ObjectHideFlags: 0
