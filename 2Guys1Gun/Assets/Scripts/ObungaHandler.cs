@@ -1,13 +1,13 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObungaHandler : MonoBehaviour
 {
     public ObungaPiece[] obungaPieces;
     private int currentIndex = 0;
 
-    private void Start()
+    void Start()
     {
-        UpdatePieceColors();
+        UpdatePieceColors(); // Set initial colors correctly
     }
 
     public bool CanBeDamaged(int index)
@@ -21,18 +21,21 @@ public class ObungaHandler : MonoBehaviour
         {
             currentIndex++;
             Debug.Log($"Obunga {index + 1} destroyed. Next is {currentIndex + 1}");
-            UpdatePieceColors();
+            UpdatePieceColors(); // Update colors after destroying
         }
     }
 
-    private void UpdatePieceColors()
+    public void UpdatePieceColors()
     {
         for (int i = 0; i < obungaPieces.Length; i++)
         {
-            SpriteRenderer sr = obungaPieces[i].GetComponent<SpriteRenderer>();
-            if (sr != null)
+            if (obungaPieces[i] != null)
             {
-                sr.color = (i == currentIndex) ? Color.white : Color.black;
+                SpriteRenderer sr = obungaPieces[i].GetComponent<SpriteRenderer>();
+                if (sr != null)
+                {
+                    sr.color = (i == currentIndex) ? Color.white : Color.black;
+                }
             }
         }
     }
