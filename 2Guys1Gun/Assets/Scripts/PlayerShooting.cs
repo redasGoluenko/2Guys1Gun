@@ -14,6 +14,8 @@ public class PlayerShooting : MonoBehaviour
     public WeaponTransfer weaponTransfer;
     public ItemShopHandler itemShopHandler;
     public TMP_Text magazine;
+    public AudioSource shootingAudioSource;
+    public AudioSource reloadAudioSource;
 
     public bool isLeftPlayer = true;
 
@@ -190,6 +192,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void ShootStandard()
     {
+        shootingAudioSource.Play();
         if (shootableObject == null) return;
 
         Vector2 direction = playerMovement.IsFacingRight() ? Vector2.right : Vector2.left;
@@ -202,13 +205,13 @@ public class PlayerShooting : MonoBehaviour
         if (collider != null) collider.radius *= 0.125f;
 
         Rigidbody2D rb = copy.GetComponent<Rigidbody2D>();
-        if (rb != null) rb.AddForce(direction * shootForce, ForceMode2D.Impulse);
-
+        if (rb != null) rb.AddForce(direction * shootForce, ForceMode2D.Impulse);    
         Destroy(copy, 1f);
     }
 
     private void ShootShotgun()
     {
+        shootingAudioSource.Play();
         if (shootableObject == null) return;
 
         int pelletCount = 5;
@@ -229,16 +232,15 @@ public class PlayerShooting : MonoBehaviour
             if (collider != null) collider.radius *= 0.1f;
 
             Rigidbody2D rb = pellet.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.AddForce(direction.normalized * shootForce, ForceMode2D.Impulse);
-
+            if (rb != null) rb.AddForce(direction.normalized * shootForce, ForceMode2D.Impulse);          
             Destroy(pellet, 1f);
         }
-
         Debug.Log("Shotgun fired!");
     }
 
     private void ShootBlast()
     {
+        shootingAudioSource.Play();
         if (shootableObject == null) return;
 
         Vector2 direction = playerMovement.IsFacingRight() ? Vector2.right : Vector2.left;
@@ -252,8 +254,7 @@ public class PlayerShooting : MonoBehaviour
 
         Rigidbody2D rb = blastProjectile.GetComponent<Rigidbody2D>();
         if (rb != null)
-            rb.AddForce(direction * shootForce * 0.5f, ForceMode2D.Impulse);
-
+            rb.AddForce(direction * shootForce * 0.5f, ForceMode2D.Impulse);       
         Destroy(blastProjectile, 2f);
 
         Debug.Log("Blast projectile fired!");
@@ -261,6 +262,7 @@ public class PlayerShooting : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        reloadAudioSource.Play();
         isReloading = true;
         magazine.text = "Reloading...";
         Debug.Log("Reloading...");
@@ -271,10 +273,26 @@ public class PlayerShooting : MonoBehaviour
         UpdateMagazineUI();
         isReloading = false;
         Debug.Log("Reload complete.");
+        StartCoroutine(FadeOutAudio(reloadAudioSource, 0.5f)); // 0.5 seconds fade
     }
 
     private void UpdateMagazineUI()
     {
         magazine.text = $".../{currentAmmo}";
     }
+
+    private IEnumerator FadeOutAudio(AudioSource audioSource, float fadeDuration)
+    {
+        float startVolume = audioSource.volume;
+
+        while (audioSource.volume > 0f)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / fadeDuration;
+            yield return null;
+        }
+
+        audioSource.Stop(); // Stop after fade
+        audioSource.volume = startVolume; // Reset volume for next use
+    }
+
 }

@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject gameOverUI;
     public ShieldHandler ShieldHandler;
+    public AudioSource deathAudioSource;
+    private bool deathAudioPlayed = false;
 
     private const string HealthKey = "PlayerCurrentHealth";
 
@@ -116,12 +118,20 @@ public class PlayerHealth : MonoBehaviour
 
     public void GameOver()
     {
-        if (gameOverUI != null)
+        if (!ShieldHandler.isShieldActive)
         {
-            gameOverUI.SetActive(true);
-        }
+            if (deathAudioSource != null && !deathAudioSource.isPlaying && !deathAudioPlayed)
+            {
+                deathAudioSource.Play();
+                deathAudioPlayed = true;
+            }
+            if (gameOverUI != null)
+            {
+                gameOverUI.SetActive(true);
+            }
 
-        PlayerPrefs.DeleteKey(HealthKey); // Optional: reset health after game over
-        Time.timeScale = 0;
+            PlayerPrefs.DeleteKey(HealthKey); // Optional: reset health after game over
+            Time.timeScale = 0;
+        }        
     }
 }

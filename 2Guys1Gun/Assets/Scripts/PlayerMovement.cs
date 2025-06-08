@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator Animation;
     public DialogueTypewriter dialogueTypewriter;
     public ShieldHandler shieldHandler;
+    public AudioSource jumpAudioSource;
 
     [Header("Initial Facing Direction")]
     public bool facingRightOnStart = true;
@@ -83,11 +84,11 @@ public class PlayerMovement : MonoBehaviour
 
         horizontal = 0f;
         if (Input.GetKey(leftKey)) horizontal = -1f;
-        else if (Input.GetKey(rightKey)) horizontal = 1f;
-
+        else if (Input.GetKey(rightKey)) horizontal = 1f;      
         // Jump
         if (Input.GetKeyDown(jumpKey) && isGrounded())
         {
+            jumpAudioSource.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
         else if (Input.GetKeyUp(jumpKey) && rb.velocity.y > 0f)

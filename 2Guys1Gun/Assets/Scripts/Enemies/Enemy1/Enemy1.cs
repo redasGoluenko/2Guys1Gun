@@ -7,7 +7,7 @@ public class Enemy1 : EnemyBase
     [Header("Pathfinding")]
     public float chaseDistance = 8f;
     public float nextWaypointDistance = 1f;
-    public float updateRate = 0.5f;
+    public float updateRate = 0.5f;   
 
     [Header("Jumping")]
     public float jumpHeight = 3f;

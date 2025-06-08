@@ -8,6 +8,7 @@ public class LockHandler : MonoBehaviour
     public int soulCost = 1; // Amount to deduct
     private SoulCounterHandler soulCounterHandler;
     public TMP_Text lockText; // Optional text to display lock status
+    public AudioSource purchaseAudio;
 
     private void Start()
     {
@@ -45,6 +46,10 @@ public class LockHandler : MonoBehaviour
 
         if (soulCounterHandler.souls >= soulCost)
         {
+            if (purchaseAudio != null)
+            {
+                purchaseAudio.Play(); // Play audio on successful unlock
+            }
             soulCounterHandler.souls -= soulCost;
 
             // Save updated soul count

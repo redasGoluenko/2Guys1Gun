@@ -7,19 +7,29 @@ public class ArrowSelector : MonoBehaviour
     public GameObject playArrow;     
     public GameObject settingsArrow;
     public GameObject quitArrow; 
+    public AudioSource arrowAudioSource;
+    public AudioSource tabSelectAudioSource;
     private int selectedArrow = 0;
+    private float sceneStartTime;
+
+    private bool hasStarted = false;
 
     void Start()
-    {      
+    {
         playArrow.SetActive(true);
         settingsArrow.SetActive(false);
         quitArrow.SetActive(false);
 
-        // Reset PlayerPrefs key so the game starts with default slot
         PlayerPrefs.DeleteKey("LastPressedSlotButtonName");
         PlayerPrefs.DeleteKey("PlayerSoulCount");
-        PlayerPrefs.Save(); // Optional but ensures the key is removed immediately
+        PlayerPrefs.Save();
+
+        sceneStartTime = Time.time; // record start time
+
+        // Don't play audio on initial setup
+        hasStarted = true;
     }
+
 
     void Update()
     {      
@@ -43,11 +53,11 @@ public class ArrowSelector : MonoBehaviour
 
     // Update the visibility of the arrows based on the selected option
     void UpdateArrowVisibility()
-    {    
+    {
         playArrow.SetActive(false);
         settingsArrow.SetActive(false);
         quitArrow.SetActive(false);
-       
+
         switch (selectedArrow)
         {
             case 0:
@@ -60,11 +70,20 @@ public class ArrowSelector : MonoBehaviour
                 quitArrow.SetActive(true);
                 break;
         }
+
+        // Play audio only if 0.5 seconds passed AND it's not the initial setup
+        if (arrowAudioSource != null && Time.time - sceneStartTime > 0.5f && hasStarted)
+        {
+            arrowAudioSource.Play();
+        }
     }
+
+
 
     // Load the selected scene or quit the application
     void SelectOption()
     {
+        tabSelectAudioSource.Play();
         switch (selectedArrow)
         {
             case 0:

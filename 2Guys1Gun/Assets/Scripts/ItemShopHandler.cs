@@ -15,7 +15,7 @@ public class ItemShopHandler : MonoBehaviour
     public Button slot7;
     public Button slot8;
     public Button slot9;
-    public Button slot10;
+    public Button slot10;   
 
     public Button lastPressedSlotButton;
 
@@ -64,7 +64,7 @@ public class ItemShopHandler : MonoBehaviour
     }
 
     private void OnSlotButtonPressed(Button button)
-    {
+    {    
         lastPressedSlotButton = button;
         PlayerPrefs.SetString(LastPressedKey, button.name);
         PlayerPrefs.Save();

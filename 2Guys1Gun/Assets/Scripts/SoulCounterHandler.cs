@@ -8,6 +8,7 @@ public class SoulCounterHandler : MonoBehaviour
     public TMP_Text soulCounterText;
     public Image Background;
     public Image SoulIcon;
+    public AudioSource enemyDeathAudioSource;
 
     public int souls = 0;
 
@@ -19,7 +20,7 @@ public class SoulCounterHandler : MonoBehaviour
     private Vector3 originalScale;
 
     void Start()
-    {
+    {       
         souls = PlayerPrefs.GetInt(SoulKey, 0); // Load saved soul count
         soulCounterText.text = souls.ToString();
         originalTextColor = soulCounterText.color;
@@ -46,6 +47,10 @@ public class SoulCounterHandler : MonoBehaviour
 
     public void UpdateSoulCounter()
     {
+        if (enemyDeathAudioSource != null)
+        {
+            enemyDeathAudioSource.Play();
+        }
         AddSouls(1);
     }
 

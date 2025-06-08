@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public int damage = 25;
     public float speed = 10f;
     public float lifetime = 3f;
-    public LayerMask groundLayer;
+    public LayerMask groundLayer;   
 
     private Vector2 direction;
     private Rigidbody2D rb;
@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
     {
         // Damage enemies
         if (other.CompareTag("Enemy"))
-        {
+        {           
             EnemyBase enemy = other.GetComponent<EnemyBase>();
             if (enemy != null)
             {

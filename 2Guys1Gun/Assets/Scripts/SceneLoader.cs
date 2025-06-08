@@ -20,7 +20,8 @@ public class SceneLoader : MonoBehaviour
     private void ResetPlayerPrefs()
     {
         Debug.Log("Resetting PlayerPrefs for scene: " + sceneName);
-        PlayerPrefs.DeleteKey("LastPressedSlotButtonName");
+        PlayerPrefs.DeleteKey("LastPressedSlotButtonName");        
+        PlayerPrefs.SetInt("PlayerSoulCount", 0);
         PlayerPrefs.DeleteKey("PlayerSoulCount");
         PlayerPrefs.Save();       
     }
