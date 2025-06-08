@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 482303707718942393}
   - component: {fileID: 7244642605113778306}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: Alien
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,7 +124,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.23, y: -3.17, z: 0}
-  m_LocalScale: {x: 1.6162857, y: 2.4402554, z: 1}
+  m_LocalScale: {x: 1.344064, y: 1.6782585, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8601243515774110897}
@@ -178,7 +178,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.21, y: 0.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -245,17 +245,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.012721002, y: -0.0512259}
+  m_Offset: {x: -0.012721002, y: -0.12032102}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 2}
-    newSize: {x: 1, y: 2}
+    newSize: {x: 0.21, y: 0.73}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.2862634, y: 1.1859851}
+  m_Size: {x: 0.2862634, y: 1.1047387}
   m_EdgeRadius: 0
 --- !u!114 &5802113060852234602
 MonoBehaviour:
@@ -319,7 +319,7 @@ Animator:
   m_GameObject: {fileID: 5013714971421990888}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: df7d715de13c6db48b9cb31ce192ba75, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb41a03e8f6458547ad4c751a0b6defe, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

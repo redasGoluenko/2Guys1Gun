@@ -28,13 +28,14 @@ public class Enemy1 : EnemyBase
     private float stuckDurationThreshold = 1f;
     private float lastXPosition;
     private bool wasStuck = false;
-
+    private Animator animator;
     protected override void Start()
     {
         base.Start();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
 
         col.isTrigger = false;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -103,12 +104,23 @@ public class Enemy1 : EnemyBase
         }
 
         UpdateFacingDirection();
+        UpdateAnimationStates();
 
         if (IsGrounded())
         {
             CheckForJump();
         }
     }
+    private void UpdateAnimationStates()
+{
+    if (animator == null) return;
+
+    float vertical = rb.velocity.y;
+    float speed = Mathf.Abs(rb.velocity.x);
+
+    animator.SetFloat("Vertical", vertical);
+    animator.SetFloat("Speed", speed);
+}
 
     void FixedUpdate()
     {
