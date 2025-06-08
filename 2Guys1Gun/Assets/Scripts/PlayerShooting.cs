@@ -34,6 +34,7 @@ public class PlayerShooting : MonoBehaviour
     private KeyCode reloadKey;
 
     private int autoShotsFired = 0;
+    private float flipX;
 
     private void Start()
     {
@@ -47,6 +48,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
+        flipX = playerMovement.IsFacingRight() ? -1f : 1f;
         if (!isReloading && currentAmmo <= 0)
         {
             StartCoroutine(Reload());
@@ -199,7 +201,7 @@ public class PlayerShooting : MonoBehaviour
         Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f) + new Vector3(0, verticalOffset, 0);
 
         GameObject copy = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
-        copy.transform.localScale = new Vector3(2f, 2f, 2f);
+        copy.transform.localScale = new Vector3(2f * flipX, 2f, 2f);
 
         CircleCollider2D collider = copy.GetComponent<CircleCollider2D>();
         if (collider != null) collider.radius *= 0.125f;
@@ -226,7 +228,7 @@ public class PlayerShooting : MonoBehaviour
             Vector2 direction = Quaternion.Euler(0, 0, angle) * Vector2.right;
 
             GameObject pellet = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
-            pellet.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            pellet.transform.localScale = new Vector3(2f * flipX, 2f, 2f);
 
             CircleCollider2D collider = pellet.GetComponent<CircleCollider2D>();
             if (collider != null) collider.radius *= 0.1f;
@@ -247,7 +249,7 @@ public class PlayerShooting : MonoBehaviour
         Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f) + new Vector3(0, verticalOffset, 0);
 
         GameObject blastProjectile = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
-        blastProjectile.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+        blastProjectile.transform.localScale = new Vector3(4f * flipX, 4f, 4f);
 
         CircleCollider2D collider = blastProjectile.GetComponent<CircleCollider2D>();
         if (collider != null) collider.radius *= 0.25f;
