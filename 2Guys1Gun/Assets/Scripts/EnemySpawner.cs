@@ -6,6 +6,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;               // Enemy prefab
     public float spawnInterval = 10f;      // Time between spawns
     public GameObject target;              // Player target GameObject
+    public bool spawnOnLeft = true;        // Toggle for spawn side
+    public int maxEnemies = 2;             // Max allowed enemies in the scene
 
     [Header("Override Stats (EnemyBase only)")]
     public float health = 100f;
@@ -28,13 +30,25 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
+        // Count existing enemies in the scene
+        GameObject[] existingEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (existingEnemies.Length >= maxEnemies)
+        {
+            return; // Too many enemies, skip spawn
+        }
+
         if (enemy == null)
         {
             Debug.LogWarning("Enemy prefab not assigned.");
             return;
         }
 
-        GameObject spawned = Instantiate(enemy, transform.position, Quaternion.identity);
+        // Determine spawn position
+        Vector3 spawnPos = transform.position;
+        float offsetX = 1f;
+        spawnPos.x += spawnOnLeft ? -offsetX : offsetX;
+
+        GameObject spawned = Instantiate(enemy, spawnPos, Quaternion.identity);
 
         EnemyBase baseScript = spawned.GetComponent<EnemyBase>();
         if (baseScript != null)
