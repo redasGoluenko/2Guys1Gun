@@ -10,6 +10,7 @@ public class MedKitHandler : MonoBehaviour
     public void HealPlayer()
     {
         player1Health.currentHealth = player1Health.maxHealth; // Restore player's health to maximum
-        player2Health.currentHealth = player2Health.maxHealth; // Restore player's health to maximum
+        player2Health.currentHealth = player2Health.maxHealth; // Restore player's health to maximum       
+        PlayerPrefs.SetInt("PlayerCurrentHealth", 100);        
     }
 }

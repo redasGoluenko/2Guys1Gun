@@ -22,6 +22,7 @@ public class ArrowSelector : MonoBehaviour
 
         PlayerPrefs.DeleteKey("LastPressedSlotButtonName");
         PlayerPrefs.DeleteKey("PlayerSoulCount");
+        PlayerPrefs.DeleteKey("PlayerCurrentHealth");
         PlayerPrefs.Save();
 
         sceneStartTime = Time.time; // record start time
