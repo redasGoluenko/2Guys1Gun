@@ -14,14 +14,13 @@ public class EnemySpawner : MonoBehaviour
     public float speed = 2f;
     public int damage = 10;
 
-    [Header("Dialogue Dependency")]
-    public DialogueTypewriter DialogueTypewriter;
+    [Header("Dialogue Dependency")]  
 
     private bool hasStartedSpawning = false;
 
     void Update()
     {
-        if (!DialogueTypewriter.dialogueActive && !hasStartedSpawning)
+        if (!hasStartedSpawning)
         {
             InvokeRepeating(nameof(SpawnEnemy), 0f, spawnInterval);
             hasStartedSpawning = true;
