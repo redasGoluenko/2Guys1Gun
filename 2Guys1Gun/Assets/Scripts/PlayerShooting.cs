@@ -199,7 +199,7 @@ public class PlayerShooting : MonoBehaviour
         Vector3 spawnPosition = transform.position + (Vector3)(direction * 0.25f) + new Vector3(0, verticalOffset, 0);
 
         GameObject copy = Instantiate(shootableObject, spawnPosition, Quaternion.identity);
-        copy.transform.localScale = new Vector3(0.125f, 0.125f, 0.125f);
+        copy.transform.localScale = new Vector3(2f, 2f, 2f);
 
         CircleCollider2D collider = copy.GetComponent<CircleCollider2D>();
         if (collider != null) collider.radius *= 0.125f;
