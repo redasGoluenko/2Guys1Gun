@@ -1,6 +1,5 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-// EnemyBase script to handle the enemy's health, movement, and damage
 public class EnemyBase : MonoBehaviour
 {
     public float maxHealth = 100f;
@@ -11,6 +10,9 @@ public class EnemyBase : MonoBehaviour
     protected SpriteRenderer spriteRenderer;
     private Color originalColor;
     protected float darknessLevel = 1f;
+
+    // 👇 New line to hold the SceneCounterManager reference
+    private SceneCounterManager sceneCounterManager;
 
     protected virtual void Start()
     {
@@ -23,7 +25,18 @@ public class EnemyBase : MonoBehaviour
             Debug.LogWarning("No target player assigned to the enemy.");
         }
 
+        // 👇 Add this block to get the SceneCounterManager and use its score
+        GameObject sceneCounterObject = GameObject.FindGameObjectWithTag("SceneCounterManager");
+        if (sceneCounterObject != null)
+        {
+            sceneCounterManager = sceneCounterObject.GetComponent<SceneCounterManager>();
+            if (sceneCounterManager != null)
+            {
+                moveSpeed += sceneCounterManager.currentScore * 0.1f; // Adjust the multiplier as needed
+            }
+        }
     }
+
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerProjectile"))
@@ -45,7 +58,6 @@ public class EnemyBase : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-
             Debug.Log("Enemy destroyed!!!!!!");
             GameObject soulCounterObject = GameObject.FindGameObjectWithTag("SoulCounter");
             if (soulCounterObject != null)
@@ -57,7 +69,6 @@ public class EnemyBase : MonoBehaviour
                 }
             }
             Destroy(gameObject);
-
         }
     }
 

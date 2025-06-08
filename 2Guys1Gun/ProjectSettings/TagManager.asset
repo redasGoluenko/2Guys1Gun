@@ -17,6 +17,7 @@ TagManager:
   - Obunga
   - BossProjectile
   - Boss
+  - SceneCounterManager
   layers:
   - Default
   - TransparentFX

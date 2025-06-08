@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private KeyCode rightKey = KeyCode.D;
     [SerializeField] private KeyCode switchKey;
     public Animator Animation;
-    public DialogueTypewriter dialogueTypewriter;
     public ShieldHandler shieldHandler;
     public AudioSource jumpAudioSource;
 
@@ -74,13 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Speed boost from shield
-        speed = shieldHandler.isShieldActive ? 12.0f : 8.0f;
-
-        if (dialogueTypewriter.dialogueActive)
-        {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
-            return;
-        }
+        speed = shieldHandler.isShieldActive ? 12.0f : 8.0f;       
 
         horizontal = 0f;
         if (Input.GetKey(leftKey)) horizontal = -1f;
