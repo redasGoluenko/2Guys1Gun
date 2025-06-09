@@ -131,7 +131,33 @@ public class PlayerHealth : MonoBehaviour
             }
 
             PlayerPrefs.DeleteKey(HealthKey); // Optional: reset health after game over
+            //unparent camera from all objects tagged "Player1" and "Player2" and set active to false          
+            DeactivatePlayers();
             Time.timeScale = 0;
         }        
+    }
+    void DeactivatePlayers()
+    {
+        string[] tags = { "Player1", "Player2" };
+
+        foreach (string tag in tags)
+        {
+            GameObject[] players = GameObject.FindGameObjectsWithTag(tag);
+            foreach (GameObject player in players)
+            {
+                if (player != null)
+                {
+                    // Unparent the player's camera (if any)
+                    Camera playerCam = player.GetComponentInChildren<Camera>();
+                    if (playerCam != null)
+                    {
+                        playerCam.transform.parent = null;
+                    }
+
+                    // Deactivate the player
+                    player.SetActive(false);
+                }
+            }
+        }
     }
 }
