@@ -5,6 +5,9 @@ public class BossHealth : MonoBehaviour
     public int hitsToDestroy = 5;  // Number of hits before destruction
     private int hitCount = 0;
 
+    public PlayerHealth PlayerHealth;
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log($"Boss collided with {collision.gameObject.name} (Tag: {collision.gameObject.tag})");
@@ -18,6 +21,10 @@ public class BossHealth : MonoBehaviour
             {
                 DestroyBoss();
             }
+        }
+        if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
+        {
+            PlayerHealth.GameOver();
         }
     }
 
