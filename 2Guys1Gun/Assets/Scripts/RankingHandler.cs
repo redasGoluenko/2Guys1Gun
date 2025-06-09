@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RankingHandler : MonoBehaviour
 {
-    public SceneCounterManager sceneCounterManager;
+    private SceneCounterManager sceneCounterManager;
 
     public Image rank1;
     public Image rank2;
@@ -16,9 +16,26 @@ public class RankingHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        highscore = sceneCounterManager.highestScore;
-        UpdateRankVisibility();
+        GameObject managerObj = GameObject.FindGameObjectWithTag("SceneCounterManager");
+        if (managerObj != null)
+        {
+            sceneCounterManager = managerObj.GetComponent<SceneCounterManager>();
+            if (sceneCounterManager != null)
+            {
+                highscore = sceneCounterManager.highestScore;
+                UpdateRankVisibility();
+            }
+            else
+            {
+                Debug.LogError("SceneCounterManager component not found on the tagged object.");
+            }
+        }
+        else
+        {
+            Debug.LogError("No GameObject found with tag 'SceneCounterManager'.");
+        }
     }
+
 
     private void UpdateRankVisibility()
     {
@@ -41,12 +58,4 @@ public class RankingHandler : MonoBehaviour
             rank3.gameObject.SetActive(true);
         }
     }
-
-    // Optional: if you want to check and update ranks every frame
-    // void Update()
-    // {
-    //     // If highscore can change during runtime and you want dynamic update:
-    //     // highscore = sceneCounterManager.highestScore;
-    //     // UpdateRankVisibility();
-    // }
 }
