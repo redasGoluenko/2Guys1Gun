@@ -210,7 +210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &27653421
 Transform:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 27653419}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.35, y: 2.08, z: 0}
+  m_LocalPosition: {x: 7.91, y: 2.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -243,7 +243,7 @@ MonoBehaviour:
   spawnInterval: 5
   target: {fileID: 1315366515}
   spawnOnLeft: 0
-  maxEnemies: 2
+  maxEnemies: 3
   health: 100
   speed: 2
   damage: 10
@@ -12018,7 +12018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &741855628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12035,7 +12035,7 @@ MonoBehaviour:
   spawnInterval: 5
   target: {fileID: 182118396}
   spawnOnLeft: 1
-  maxEnemies: 2
+  maxEnemies: 3
   health: 100
   speed: 2
   damage: 10
@@ -12048,7 +12048,7 @@ Transform:
   m_GameObject: {fileID: 741855627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.31, y: 2.174, z: 0}
+  m_LocalPosition: {x: -7.46, y: 2.174, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
