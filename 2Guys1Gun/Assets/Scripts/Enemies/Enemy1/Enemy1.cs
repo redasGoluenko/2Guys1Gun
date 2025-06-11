@@ -1,50 +1,52 @@
 using UnityEngine;
 using Pathfinding;
 
+// used A* pathfinding project
+// https://arongranberg.com/astar/
+
+// require necessary components
 [RequireComponent(typeof(Seeker), typeof(Rigidbody2D), typeof(Collider2D))]
 public class Enemy1 : EnemyBase
 {
     [Header("Pathfinding")]
-    public float chaseDistance = 8f;
-    public float nextWaypointDistance = 1f;
-    public float updateRate = 0.5f;   
+    public float chaseDistance = 8f; // max distance to start chasing player
+    public float nextWaypointDistance = 1f; // distance to switch to next waypoint
+    public float updateRate = 0.5f; // path update interval
 
     [Header("Jumping")]
-    public float jumpHeight = 3f;
-    public float jumpCooldown = 0.5f;
-    public LayerMask groundLayer;
+    public float jumpHeight = 3f; // jump height
+    public float jumpCooldown = 0.5f; // cooldown between jumps
+    public LayerMask groundLayer; // what is considered ground
 
-    private Seeker seeker;
-    private Rigidbody2D rb;
-    private Collider2D col;
-    private Path path;
-    private int currentWaypoint = 0;
-    private bool isFacingRight = true;
-    private float lastJumpTime;
-    private bool reachedEndOfPath;
+    private Seeker seeker; // pathfinding component
+    private Rigidbody2D rb; // physics body
+    private Collider2D col; // collider for ground checks
+    private Path path; // current path to player
+    private int currentWaypoint = 0; // current path waypoint index
+    private bool isFacingRight = true; // facing direction
+    private float lastJumpTime; // last jump time
+    private bool reachedEndOfPath; // reached final waypoint
+    private float stuckCheckTimer = 0f; // time spent stuck
+    private float stuckDurationThreshold = 1f; // time before considered stuck
+    private float lastXPosition; // previous x position
+    private bool wasStuck = false; // was stuck last check
+    private Animator animator; // animation controller
 
-    // Stuck detection fields
-    private float stuckCheckTimer = 0f;
-    private float stuckDurationThreshold = 1f;
-    private float lastXPosition;
-    private bool wasStuck = false;
-    private Animator animator;
     protected override void Start()
     {
         base.Start();
-        seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
-        animator = GetComponent<Animator>();
+        seeker = GetComponent<Seeker>(); // get seeker
+        rb = GetComponent<Rigidbody2D>(); // get rigidbody
+        col = GetComponent<Collider2D>(); // get collider
+        animator = GetComponent<Animator>(); // get animator
 
-        col.isTrigger = false;
+        col.isTrigger = false; // ensure collisions are on
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.sleepMode = RigidbodySleepMode2D.NeverSleep;
 
-        InvokeRepeating(nameof(UpdatePath), 0f, updateRate);
-        IgnorePlayerCollision();
-
-        lastXPosition = rb.position.x;
+        InvokeRepeating(nameof(UpdatePath), 0f, updateRate); // keep path updated
+        IgnorePlayerCollision(); // ignore player collision
+        lastXPosition = rb.position.x; // store starting x pos
     }
 
     void IgnorePlayerCollision()
@@ -54,14 +56,16 @@ public class Enemy1 : EnemyBase
             Collider2D playerCol = targetPlayer.GetComponent<Collider2D>();
             if (playerCol)
             {
-                Physics2D.IgnoreCollision(col, playerCol, true);
+                Physics2D.IgnoreCollision(col, playerCol, true); // turn off collision
             }
         }
     }
 
     void UpdatePath()
     {
-        if (targetPlayer && seeker.IsDone() && Vector2.Distance(transform.position, targetPlayer.transform.position) <= chaseDistance)
+        // update path if close enough and seeker ready
+        if (targetPlayer && seeker.IsDone() &&
+            Vector2.Distance(transform.position, targetPlayer.transform.position) <= chaseDistance)
         {
             seeker.StartPath(rb.position, targetPlayer.transform.position, OnPathComplete);
         }
@@ -71,9 +75,9 @@ public class Enemy1 : EnemyBase
     {
         if (!p.error)
         {
-            path = p;
-            currentWaypoint = 0;
-            reachedEndOfPath = false;
+            path = p; // set new path
+            currentWaypoint = 0; // reset progress
+            reachedEndOfPath = false; // clear flag
         }
     }
 
@@ -81,50 +85,46 @@ public class Enemy1 : EnemyBase
     {
         if (path == null || targetPlayer == null) return;
 
-        // Only check for stuck if within chase range
         if (Vector2.Distance(transform.position, targetPlayer.transform.position) <= chaseDistance)
         {
             float xMoved = Mathf.Abs(rb.position.x - lastXPosition);
 
-            if (xMoved < 0.01f)
+            if (xMoved < 0.01f) // barely moved
             {
                 stuckCheckTimer += Time.deltaTime;
+
                 if (stuckCheckTimer >= stuckDurationThreshold && !wasStuck)
                 {
-                    NudgeIfStuck();
+                    NudgeIfStuck(); // apply nudge
                     wasStuck = true;
                 }
             }
             else
             {
-                stuckCheckTimer = 0f;
+                stuckCheckTimer = 0f; // reset stuck timer
                 wasStuck = false;
-                lastXPosition = rb.position.x;
+                lastXPosition = rb.position.x; // update last x
             }
         }
 
-        UpdateFacingDirection();
-        UpdateAnimationStates();
+        UpdateFacingDirection(); // flip if needed
+        UpdateAnimationStates(); // update animator
 
-        if (IsGrounded())
-        {
-            CheckForJump();
-        }
+        if (IsGrounded()) CheckForJump(); // try jumping
     }
+
     private void UpdateAnimationStates()
-{
-    if (animator == null) return;
-
-    float vertical = rb.velocity.y;
-    float speed = Mathf.Abs(rb.velocity.x);
-
-    animator.SetFloat("Vertical", vertical);
-    animator.SetFloat("Speed", speed);
-}
+    {
+        if (animator == null) return;
+        float vertical = rb.velocity.y; // y speed
+        float speed = Mathf.Abs(rb.velocity.x); // x speed
+        animator.SetFloat("Vertical", vertical);
+        animator.SetFloat("Speed", speed);
+    }
 
     void FixedUpdate()
     {
-        Move();
+        Move(); // handle movement
     }
 
     public override void Move()
@@ -133,7 +133,7 @@ public class Enemy1 : EnemyBase
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            reachedEndOfPath = true; // stop if done
             return;
         }
 
@@ -142,39 +142,33 @@ public class Enemy1 : EnemyBase
 
         if (distance < nextWaypointDistance)
         {
-            currentWaypoint++;
+            currentWaypoint++; // go to next point
             return;
         }
 
         Vector2 direction = ((Vector2)targetPosition - rb.position).normalized;
-        bool isWallAhead = IsWallInDirection(Mathf.Sign(direction.x));
+        bool isWallAhead = IsWallInDirection(Mathf.Sign(direction.x)); // wall check
         bool isBelowTarget = targetPosition.y > rb.position.y + 0.2f;
 
-        // ✅ Handle case where enemy is directly above player and might be stuck
         if (targetPlayer != null)
         {
             float xDiff = Mathf.Abs(targetPlayer.transform.position.x - rb.position.x);
             float yDiff = rb.position.y - targetPlayer.transform.position.y;
 
-            if (xDiff < 0.5f && yDiff > 0.5f) // close X, player clearly below
+            if (xDiff < 0.5f && yDiff > 0.5f && !IsWallInDirection(1f))
             {
-                // move slightly to the right if no wall
-                if (!IsWallInDirection(1f))
-                {
-                    rb.velocity = new Vector2(1f, rb.velocity.y); // slight nudge right
-                    return;
-                }
+                rb.velocity = new Vector2(1f, rb.velocity.y); // hop down
+                return;
             }
         }
 
-        // Standard horizontal move unless blocked or falling
         if (IsGrounded() && isWallAhead && isBelowTarget)
         {
-            rb.velocity = new Vector2(0f, rb.velocity.y); // let it fall
+            rb.velocity = new Vector2(0f, rb.velocity.y); // stop at wall
         }
         else
         {
-            rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(direction.x * moveSpeed, rb.velocity.y); // move forward
         }
     }
 
@@ -183,21 +177,22 @@ public class Enemy1 : EnemyBase
         if (path == null || currentWaypoint >= path.vectorPath.Count) return;
 
         Vector2 dir = path.vectorPath[currentWaypoint] - transform.position;
-        if (dir.x > 0.1f && !isFacingRight) Flip();
-        else if (dir.x < -0.1f && isFacingRight) Flip();
+
+        if (dir.x > 0.1f && !isFacingRight) Flip(); // face right
+        else if (dir.x < -0.1f && isFacingRight) Flip(); // face left
     }
 
     private void Flip()
     {
         isFacingRight = !isFacingRight;
         Vector3 scale = transform.localScale;
-        scale.x *= -1;
+        scale.x *= -1; // flip scale
         transform.localScale = scale;
     }
 
     private bool IsGrounded()
     {
-        return col.IsTouchingLayers(groundLayer);
+        return col.IsTouchingLayers(groundLayer); // grounded check
     }
 
     private bool IsWallInDirection(float direction)
@@ -205,7 +200,8 @@ public class Enemy1 : EnemyBase
         Vector2 origin = rb.position;
         Vector2 dir = new Vector2(direction, 0f);
         float distance = 0.3f;
-        RaycastHit2D hit = Physics2D.Raycast(origin, dir, distance, groundLayer);
+
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, distance, groundLayer); // cast ray
         return hit.collider != null;
     }
 
@@ -219,14 +215,14 @@ public class Enemy1 : EnemyBase
         Vector2 nextWaypoint = path.vectorPath[currentWaypoint];
         float heightDifference = nextWaypoint.y - currentPos.y;
         float horizontalDistance = Mathf.Abs(nextWaypoint.x - currentPos.x);
-
         bool isWallAhead = IsWallInDirection(Mathf.Sign(nextWaypoint.x - currentPos.x));
 
-        if (heightDifference > 0.5f && horizontalDistance > 0.2f && rb.velocity.y <= 0.1f && !isWallAhead)
+        if (heightDifference > 0.5f && horizontalDistance > 0.2f &&
+            rb.velocity.y <= 0.1f && !isWallAhead)
         {
             float jumpVelocity = Mathf.Sqrt(2f * Mathf.Abs(Physics2D.gravity.y) * jumpHeight);
-            rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
-            lastJumpTime = Time.time;
+            rb.velocity = new Vector2(rb.velocity.x, jumpVelocity); // jump up
+            lastJumpTime = Time.time; // reset jump timer
         }
     }
 
@@ -234,62 +230,44 @@ public class Enemy1 : EnemyBase
     {
         if (path == null || currentWaypoint >= path.vectorPath.Count) return;
 
-        // Get the next waypoint's position
         Vector2 nextWaypointPos = path.vectorPath[currentWaypoint];
-
-        // Check if we're below the next waypoint
         bool isBelowNextWaypoint = rb.position.y < nextWaypointPos.y;
 
         if (isBelowNextWaypoint)
         {
-            // Determine which direction to nudge based on the path direction
             float nudgeDirection = 0f;
 
-            // Check if we can get the waypoint after next for better direction
             if (currentWaypoint + 1 < path.vectorPath.Count)
             {
                 Vector2 nextNextWaypointPos = path.vectorPath[currentWaypoint + 1];
-                nudgeDirection = Mathf.Sign(nextNextWaypointPos.x - nextWaypointPos.x);
+                nudgeDirection = Mathf.Sign(nextNextWaypointPos.x - nextWaypointPos.x); // look ahead
             }
             else
             {
-                // If no next waypoint, use the direction to the current waypoint
-                nudgeDirection = Mathf.Sign(nextWaypointPos.x - rb.position.x);
+                nudgeDirection = Mathf.Sign(nextWaypointPos.x - rb.position.x); // use current
             }
 
-            // Try nudging in the path direction first
             if (!IsWallInDirection(nudgeDirection))
             {
-                rb.velocity = new Vector2(nudgeDirection * moveSpeed * 0.5f, rb.velocity.y);
+                rb.velocity = new Vector2(nudgeDirection * moveSpeed * 0.5f, rb.velocity.y); // nudge forward
                 return;
             }
 
-            // If that direction is blocked, try the opposite direction
             if (!IsWallInDirection(-nudgeDirection))
             {
-                rb.velocity = new Vector2(-nudgeDirection * moveSpeed * 0.5f, rb.velocity.y);
+                rb.velocity = new Vector2(-nudgeDirection * moveSpeed * 0.5f, rb.velocity.y); // nudge backward
                 return;
             }
         }
         else
         {
-            // Original behavior if not below waypoint
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-            float nudgeAmount = 0.5f;
-            float nudgeDir = -Mathf.Sign(direction.x); // Move opposite to current target direction
+            float nudgeDir = -Mathf.Sign(direction.x);
 
-            // Only nudge if no wall on the new side
             if (!IsWallInDirection(nudgeDir))
             {
-                rb.velocity = new Vector2(nudgeDir * nudgeAmount, rb.velocity.y);
+                rb.velocity = new Vector2(nudgeDir * 0.5f, rb.velocity.y); // nudge sideways
             }
         }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (!Application.isPlaying) return;
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(rb.position, rb.position + new Vector2(0.3f * Mathf.Sign(transform.localScale.x), 0));
     }
 }
