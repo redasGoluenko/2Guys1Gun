@@ -150,18 +150,6 @@ public class Enemy1 : EnemyBase
         bool isWallAhead = IsWallInDirection(Mathf.Sign(direction.x)); // wall check
         bool isBelowTarget = targetPosition.y > rb.position.y + 0.2f;
 
-        if (targetPlayer != null)
-        {
-            float xDiff = Mathf.Abs(targetPlayer.transform.position.x - rb.position.x);
-            float yDiff = rb.position.y - targetPlayer.transform.position.y;
-
-            if (xDiff < 0.5f && yDiff > 0.5f && !IsWallInDirection(1f))
-            {
-                rb.velocity = new Vector2(1f, rb.velocity.y); // hop down
-                return;
-            }
-        }
-
         if (IsGrounded() && isWallAhead && isBelowTarget)
         {
             rb.velocity = new Vector2(0f, rb.velocity.y); // stop at wall

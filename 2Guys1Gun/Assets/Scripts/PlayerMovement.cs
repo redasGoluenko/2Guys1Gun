@@ -1,5 +1,4 @@
 using System.Collections;
-using Pathfinding.Ionic.Zip;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
